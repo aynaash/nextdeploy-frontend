@@ -1,4 +1,3 @@
-
 version: "1.0" # ⚠️ Do NOT change unless you change field meanings, format, or logic.
 
 # ==================================================
@@ -33,17 +32,17 @@ docker:
   registry: docker.io
   push: true
   username: aynaash
-  password: dckr_pat_H8xP4EPpj4_zKddasew332323411314E3113K4gnInqXh010 #Replace with your Docker registry credentials 
+  password: dckr_pat_H8xP4EPpj4_zKddasew332323411314E3113K4gnInqXh010 #Replace with your Docker registry credentials
 
 # ==================================================
 # INFRASTRUCTURE / SERVER TARGETS
 # ==================================================
 servers:
   - name: production # Unique ID (used for logs, filtering, routing)
-    host: 51.20.134.163
-    username: ubuntu
-    ssh_key: ~/.ssh/nextdeploy-key.pem
-    key_path: "/home/elitebook/.ssh/nextdeploy-key.pem"
+    host: 34.229.146.57
+    username: ec2-user # when on aws if aws linux user can be `ec2-user` if on ubuntu user can be `ubuntu`
+    ssh_key: ~/.ssh/nextjs-web-key.pem
+    key_path: ~/.ssh/nextjs-web-key.pem
     use_sudo: false
 
     container:
@@ -162,7 +161,7 @@ webhook:
 # Great for chaining environments. Success webhook → notify QA or trigger end-to-end test suite.
 deployment:
   server:
-    host: 51.20.134.163 # Must match one of your servers' host
+    host: 34.229.146.57 # Must match one of your servers' host
   container:
     name: nextdeploy
     restart: always

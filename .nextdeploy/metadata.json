@@ -2,12 +2,12 @@
   "app_name": "nextdeploy",
   "next_version": "16.0.10",
   "nextbuildmetadata": {
-    "buildId": "CxkP-ircL2VqjToyWX7_z",
+    "buildId": "xAAcZmyUiR573fQwYOWHj",
     "buildManifest": {
       "devFiles": [],
       "lowPriorityFiles": [
-        "static/CxkP-ircL2VqjToyWX7_z/_ssgManifest.js",
-        "static/CxkP-ircL2VqjToyWX7_z/_buildManifest.js"
+        "static/xAAcZmyUiR573fQwYOWHj/_ssgManifest.js",
+        "static/xAAcZmyUiR573fQwYOWHj/_buildManifest.js"
       ],
       "pages": {
         "/_app": []
@@ -535,12 +535,17 @@
       "/page": "/"
     },
     "reactLoadableManifest": null,
-    "diagnostics": null
+    "diagnostics": [
+      "build-diagnostics.json",
+      "framework.json"
+    ],
+    "outputMode": "standalone",
+    "hasAppRouter": true
   },
   "static_routes": null,
   "dymanic_routes": null,
-  "build_command": "pnpm run build",
-  "start_command": "pnpm start",
+  "build_command": "bun run build",
+  "start_command": "bun start",
   "has_image_assets": true,
   "cdn_enabled": false,
   "domain": "https://www.nextdeploy.one",
@@ -572,20 +577,20 @@
         "size": 566
       },
       {
-        "path": "public/icon.svg",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/icon.svg",
-        "public_path": "/icon.svg",
-        "type": "image",
-        "extension": ".svg",
-        "size": 1304
-      },
-      {
-        "path": "public/placeholder-logo.png",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/placeholder-logo.png",
-        "public_path": "/placeholder-logo.png",
+        "path": "public/logo.png",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/logo.png",
+        "public_path": "/logo.png",
         "type": "image",
         "extension": ".png",
-        "size": 568
+        "size": 21789
+      },
+      {
+        "path": "public/logo.svg",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/logo.svg",
+        "public_path": "/logo.svg",
+        "type": "image",
+        "extension": ".svg",
+        "size": 1270
       },
       {
         "path": "public/placeholder-logo.svg",
@@ -623,30 +628,6 @@
     "static_folder": null,
     "next_static": [
       {
-        "path": ".next/static/CxkP-ircL2VqjToyWX7_z/_buildManifest.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/CxkP-ircL2VqjToyWX7_z/_buildManifest.js",
-        "public_path": "/_next/static/CxkP-ircL2VqjToyWX7_z/_buildManifest.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 219
-      },
-      {
-        "path": ".next/static/CxkP-ircL2VqjToyWX7_z/_clientMiddlewareManifest.json",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/CxkP-ircL2VqjToyWX7_z/_clientMiddlewareManifest.json",
-        "public_path": "/_next/static/CxkP-ircL2VqjToyWX7_z/_clientMiddlewareManifest.json",
-        "type": "document",
-        "extension": ".json",
-        "size": 2
-      },
-      {
-        "path": ".next/static/CxkP-ircL2VqjToyWX7_z/_ssgManifest.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/CxkP-ircL2VqjToyWX7_z/_ssgManifest.js",
-        "public_path": "/_next/static/CxkP-ircL2VqjToyWX7_z/_ssgManifest.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 80
-      },
-      {
         "path": ".next/static/chunks/041b3e0e3c954a8f.js",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/041b3e0e3c954a8f.js",
         "public_path": "/_next/static/chunks/041b3e0e3c954a8f.js",
@@ -655,20 +636,20 @@
         "size": 51069
       },
       {
-        "path": ".next/static/chunks/1aa67ad2de0699db.css",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/1aa67ad2de0699db.css",
-        "public_path": "/_next/static/chunks/1aa67ad2de0699db.css",
-        "type": "stylesheet",
-        "extension": ".css",
-        "size": 131487
-      },
-      {
         "path": ".next/static/chunks/3337476739009024.js",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/3337476739009024.js",
         "public_path": "/_next/static/chunks/3337476739009024.js",
         "type": "script",
         "extension": ".js",
         "size": 281
+      },
+      {
+        "path": ".next/static/chunks/5943f8379a72c367.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/5943f8379a72c367.js",
+        "public_path": "/_next/static/chunks/5943f8379a72c367.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 24353
       },
       {
         "path": ".next/static/chunks/796e7f5bb07ad38d.js",
@@ -685,14 +666,6 @@
         "type": "script",
         "extension": ".js",
         "size": 85404
-      },
-      {
-        "path": ".next/static/chunks/7e420b3a28e200c7.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/7e420b3a28e200c7.js",
-        "public_path": "/_next/static/chunks/7e420b3a28e200c7.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 24253
       },
       {
         "path": ".next/static/chunks/8a78cbfae800a97c.js",
@@ -735,6 +708,22 @@
         "size": 112594
       },
       {
+        "path": ".next/static/chunks/ba78965da6e2a706.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/ba78965da6e2a706.js",
+        "public_path": "/_next/static/chunks/ba78965da6e2a706.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 10619
+      },
+      {
+        "path": ".next/static/chunks/be6e1070f5dc5517.css",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/be6e1070f5dc5517.css",
+        "public_path": "/_next/static/chunks/be6e1070f5dc5517.css",
+        "type": "stylesheet",
+        "extension": ".css",
+        "size": 133201
+      },
+      {
         "path": ".next/static/chunks/c3f31ae7688b1ab0.js",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/c3f31ae7688b1ab0.js",
         "public_path": "/_next/static/chunks/c3f31ae7688b1ab0.js",
@@ -751,12 +740,12 @@
         "size": 2704
       },
       {
-        "path": ".next/static/chunks/d23830b60189c57a.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/d23830b60189c57a.js",
-        "public_path": "/_next/static/chunks/d23830b60189c57a.js",
+        "path": ".next/static/chunks/facd9eb78646c677.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/facd9eb78646c677.js",
+        "public_path": "/_next/static/chunks/facd9eb78646c677.js",
         "type": "script",
         "extension": ".js",
-        "size": 12045
+        "size": 15496
       },
       {
         "path": ".next/static/chunks/turbopack-4798b47f97ab07f6.js",
@@ -813,142 +802,45 @@
         "type": "font",
         "extension": ".woff2",
         "size": 28388
+      },
+      {
+        "path": ".next/static/xAAcZmyUiR573fQwYOWHj/_buildManifest.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/xAAcZmyUiR573fQwYOWHj/_buildManifest.js",
+        "public_path": "/_next/static/xAAcZmyUiR573fQwYOWHj/_buildManifest.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 219
+      },
+      {
+        "path": ".next/static/xAAcZmyUiR573fQwYOWHj/_clientMiddlewareManifest.json",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/xAAcZmyUiR573fQwYOWHj/_clientMiddlewareManifest.json",
+        "public_path": "/_next/static/xAAcZmyUiR573fQwYOWHj/_clientMiddlewareManifest.json",
+        "type": "document",
+        "extension": ".json",
+        "size": 2
+      },
+      {
+        "path": ".next/static/xAAcZmyUiR573fQwYOWHj/_ssgManifest.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/xAAcZmyUiR573fQwYOWHj/_ssgManifest.js",
+        "public_path": "/_next/static/xAAcZmyUiR573fQwYOWHj/_ssgManifest.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 80
       }
     ],
     "other_assets": null
   },
-  "git_commit": "a391cde",
+  "git_commit": "6d469ad",
   "git_dirty": true,
-  "generated_at": "2026-02-22T04:53:04+03:00",
+  "generated_at": "2026-03-01T01:09:08+03:00",
   "build_lock_file": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/build.lock",
   "metadata_file_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/metadata.json",
   "assets_output_dir": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/assets",
   "config": {
-    "Version": "1.0",
-    "App": {
-      "Name": "nextdeploy",
-      "Port": 3000,
-      "Environment": "production",
-      "Domain": "https://www.nextdeploy.one",
-      "Secrets": null
-    },
-    "Repository": {
-      "URL": "git@github.com:aynaash/nextdeploy-frontend.git",
-      "Branch": "main",
-      "AutoDeploy": false,
-      "WebhookSecret": ""
-    },
-    "Docker": {
-      "Image": "aynaash/nextdeployfrontend",
-      "Registry": "docker.io",
-      "RegistryRegion": "",
-      "Build": {
-        "Context": ".",
-        "Dockerfile": "Dockerfile",
-        "NoCache": false,
-        "Args": {
-          "NODE_ENV": "production"
-        }
-      },
-      "Push": true,
-      "Username": "aynaash",
-      "Password": "dckr_pat_H8xP4EPpj4_zKddasew332323411314E3113K4gnInqXh010",
-      "AlwaysPull": false,
-      "Strategy": "",
-      "AutoPush": false,
-      "Platform": "",
-      "NoCache": false,
-      "BuildContext": "",
-      "Target": ""
-    },
-    "Deployment": {
-      "Server": {
-        "Host": "51.20.134.163",
-        "User": "",
-        "SSHKey": "",
-        "UseSudo": false
-      },
-      "Container": {
-        "Name": "nextdeploy",
-        "Restart": "always",
-        "Ports": [
-          "80:3000"
-        ],
-        "HealthCheck": null
-      }
-    },
-    "Database": {
-      "Type": "postgres",
-      "Host": "192.0.2.124",
-      "Port": "5432",
-      "Username": "dbuser",
-      "Password": "secret",
-      "Name": "exampledb"
-    },
-    "Monitoring": {
-      "Enabled": true,
-      "Type": "",
-      "Endpoint": "",
-      "Alerts": {
-        "CPUThreshold": 0,
-        "MemoryThreshold": 0,
-        "Email": "",
-        "SlackWebhook": ""
-      }
-    },
-    "Secrets": {
-      "Provider": "",
-      "Doppler": null,
-      "Vault": null,
-      "Files": null,
-      "Project": "",
-      "Config": ""
-    },
-    "Logging": {
-      "Driver": "",
-      "Options": null
-    },
-    "Backup": {
-      "Enabled": true,
-      "Schedule": "",
-      "Retention": 0,
-      "Storage": {
-        "Type": "",
-        "Endpoint": "",
-        "Bucket": "nextdeploy-backups",
-        "AccessKey": "",
-        "SecretKey": ""
-      }
-    },
-    "SSL": {
-      "Enabled": true,
-      "Provider": "letsencrypt",
-      "Domains": null,
-      "Email": "yussufhersi219@gmail.com",
-      "Wildcard": true,
-      "DNSProvider": "namecheap",
-      "Staging": false,
-      "Force": false,
-      "AutoRenew": true,
-      "Domain": "nextdeploy.one"
-    },
-    "Webhooks": null,
-    "Environment": null,
-    "Servers": [
-      {
-        "WebServer": null,
-        "Name": "production",
-        "Host": "51.20.134.163",
-        "Port": 0,
-        "Username": "ubuntu",
-        "Password": "",
-        "KeyPath": "/home/elitebook/.ssh/nextdeploy-key.pem",
-        "SSHKey": "~/.ssh/nextdeploy-key.pem",
-        "KeyPassphrase": ""
-      }
-    ],
-    "SSLConfig": null,
-    "CloudProvider": null
+    "app_name": "nextdeploy",
+    "domain": "https://www.nextdeploy.one",
+    "port": 3000,
+    "environment": "production"
   },
   "image_assets": {
     "public_images": null,
@@ -978,7 +870,7 @@
     "fallback_routes": {},
     "middleware_routes": null
   },
-  "standalone": "",
+  "output_mode": "standalone",
   "next_build": {
     "root_files": {
       "build_manifest": "",
@@ -1039,6 +931,6 @@
   },
   "working_dir": "",
   "root_dir": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend",
-  "package_manager": "pnpm",
-  "entrypoint": ""
+  "package_manager": "bun",
+  "entrypoint": "server.js"
 }

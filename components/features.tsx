@@ -2,28 +2,28 @@
 
 const features = [
   {
-    title: 'Docker Native',
-    description: 'Optimized Docker builds for Next.js with smart caching and production-ready configurations.'
+    title: 'Native AWS Serverless',
+    description: 'Deploy to Lambda, S3, and CloudFront natively. Intelligent payload splitting with zero vendor lock-in.'
   },
   {
-    title: 'SSH Deploy',
-    description: 'Deploy to any VPS via SSH. Works with DigitalOcean, Hetzner, AWS, and more.'
+    title: 'Zero-Downtime Hot Swaps',
+    description: 'Advanced Release/Symlink architecture on VPS. Seamless traffic shifting with zero 502 errors.'
   },
   {
-    title: 'Secure Secrets',
-    description: 'First-class secret management with Doppler integration. No .env files exposed.'
+    title: 'Native Log Streaming',
+    description: 'Stream systemd journal logs in real-time. Filter by specific request paths and routes.'
   },
   {
-    title: 'Monitoring Built-in',
-    description: 'Auto-restart, health checks, and metrics monitoring out of the box.'
+    title: 'Instant Rollbacks',
+    description: 'Shift the /current symlink back to any previous release instantly if something goes wrong.'
   },
   {
-    title: 'CLI First',
-    description: 'Simple, powerful commands. Full transparency. No black boxes or hidden magic.'
+    title: 'Caddy Orchestration',
+    description: 'Native Caddy integration for automatic SSL and high-performance reverse proxying.'
   },
   {
-    title: 'Open Source',
-    description: 'Apache 2.0 licensed. Community-driven. Contribute and improve together.'
+    title: 'Zero-Touch CI/CD',
+    description: 'Generate optimized GitHub Actions pipelines with a single command for automated shipping.'
   }
 ]
 
@@ -39,7 +39,7 @@ export default function Features() {
             Built by developers, for developers who want full control
           </p>
         </div>
-        
+
         <div className="space-y-3">
           {features.map((feature, i) => (
             <div

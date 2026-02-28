@@ -1,0 +1,45 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Setup Go (For NextDeploy CLI)
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.22
+
+      - name: Install NextDeploy CLI
+        run: |
+          go install github.com/aynaash/NextDeploy/cli@latest
+          export PATH=$PATH:$(go env GOPATH)/bin
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/nextdeploy-key.pem
+          chmod 600 ~/.ssh/nextdeploy-key.pem
+
+      - name: Build Next.js Payload
+        run: nextdeploy build
+
+      - name: Ship Application
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+        run: nextdeploy deploy

@@ -19,7 +19,7 @@ const docSections = [
     description: 'Configure your deployments',
     items: [
       'Environment Variables',
-      'Docker Configuration',
+      'Environment Configuration',
       'Secret Management'
     ]
   },

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Self-hosted Next.js deployment platform',
     type: 'website',
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({

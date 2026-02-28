@@ -8,22 +8,22 @@ const installOptions = [
     id: 'cli-unix',
     name: 'Mac/Linux CLI',
     icon: Terminal,
-    cmd: 'curl https://nextdeploy.one/nextdeploy | sh',
-    desc: 'Install CLI tool for developers'
+    cmd: 'curl https://nextdeploy.one/nextdeploy.sh | sh',
+    desc: 'Install NextDeploy CLI tool'
   },
   {
     id: 'cli-win',
     name: 'Windows CLI',
     icon: Monitor,
-    cmd: 'curl https://nextdeploy.one/nextdeploy.bat | sh',
+    cmd: 'iwr https://nextdeploy.one/nextdeploy.ps1 | iex',
     desc: 'Install CLI tool on Windows'
   },
   {
     id: 'daemon',
-    name: 'Ubuntu Server',
+    name: 'Server Daemon',
     icon: Server,
     cmd: 'curl https://nextdeploy.one/nextdeployd.sh | sh',
-    desc: 'Install NextDeploy Daemon'
+    desc: 'Install the Zero-Downtime Daemon'
   }
 ]
 
@@ -42,10 +42,10 @@ export default function QuickStart() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Get Started in 1 Command
+            Zero-Touch Developer Experience
           </h2>
           <p className="text-gray-400 text-lg">
-            Install NextDeploy everywhere you need it
+            From initialization to globally distributed production
           </p>
         </div>
 
@@ -59,11 +59,10 @@ export default function QuickStart() {
                 <button
                   key={option.id}
                   onClick={() => setActiveTab(option)}
-                  className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors border-b-2 whitespace-nowrap ${
-                    isActive 
-                      ? 'text-emerald-400 border-emerald-500 bg-slate-800/50' 
-                      : 'text-gray-400 border-transparent hover:text-gray-200 hover:bg-slate-800/30'
-                  }`}
+                  className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors border-b-2 whitespace-nowrap ${isActive
+                    ? 'text-emerald-400 border-emerald-500 bg-slate-800/50'
+                    : 'text-gray-400 border-transparent hover:text-gray-200 hover:bg-slate-800/30'
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   {option.name}
@@ -97,36 +96,37 @@ export default function QuickStart() {
                 <div className="flex-1">
                   <code className="text-emerald-300 break-all text-base font-medium">{activeTab.cmd}</code>
                   <div className="text-gray-500 mt-4 flex items-center gap-2">
-                     <span className="w-2 h-2 rounded-full bg-blue-500/50"></span>
-                     {activeTab.desc}
+                    <span className="w-2 h-2 rounded-full bg-blue-500/50"></span>
+                    {activeTab.desc}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Coming soon section */}
+
+        {/* Step Badge */}
         <div className="mt-8 text-center bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 inline-block mx-auto flex items-center justify-center gap-3 max-w-2xl w-full text-emerald-300 text-sm">
-          <Server className="w-4 h-4 shrink-0" />
-          <p>Bring your own server. Active integrations for <strong>AWS</strong>, <strong>GCP</strong>, and other cloud providers are <strong>coming soon</strong>.</p>
+          <Terminal className="w-4 h-4 shrink-0" />
+          <p>Run <strong>nextdeploy init</strong> to analyze your project and scaffold your config instantly.</p>
         </div>
 
         {/* Features grid below terminal */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           <div className="text-center p-6 rounded-xl border border-slate-700/50 hover:border-emerald-600/40 hover:bg-slate-900/30 transition-all duration-300 group">
-            <div className="text-4xl font-bold text-emerald-400 mb-3 group-hover:text-emerald-300 transition-colors">~2min</div>
-            <p className="text-gray-400 group-hover:text-gray-300 text-sm font-medium transition-colors">Quick setup</p>
+            <div className="text-4xl font-bold text-emerald-400 mb-3 group-hover:text-emerald-300 transition-colors">Native</div>
+            <p className="text-gray-400 group-hover:text-gray-300 text-sm font-medium transition-colors">Zero abstraction overhead</p>
           </div>
           <div className="text-center p-6 rounded-xl border border-slate-700/50 hover:border-emerald-600/40 hover:bg-slate-900/30 transition-all duration-300 group">
-            <div className="text-4xl font-bold text-emerald-400 mb-3 group-hover:text-emerald-300 transition-colors">0$</div>
-            <p className="text-gray-400 group-hover:text-gray-300 text-sm font-medium transition-colors">Zero lock-in</p>
+            <div className="text-4xl font-bold text-emerald-400 mb-3 group-hover:text-emerald-300 transition-colors">0ms</div>
+            <p className="text-gray-400 group-hover:text-gray-300 text-sm font-medium transition-colors">Zero-downtime shipping</p>
           </div>
           <div className="text-center p-6 rounded-xl border border-slate-700/50 hover:border-emerald-600/40 hover:bg-slate-900/30 transition-all duration-300 group">
-            <div className="text-4xl font-bold text-emerald-400 mb-3 group-hover:text-emerald-300 transition-colors">∞</div>
-            <p className="text-gray-400 group-hover:text-gray-300 text-sm font-medium transition-colors">Full control</p>
+            <div className="text-4xl font-bold text-emerald-400 mb-3 group-hover:text-emerald-300 transition-colors">AWS</div>
+            <p className="text-gray-400 group-hover:text-gray-300 text-sm font-medium transition-colors">Native Serverless moat</p>
           </div>
         </div>
+
       </div>
     </section>
   )

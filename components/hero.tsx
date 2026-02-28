@@ -2,13 +2,14 @@
 
 import { useState } from 'react'
 import { Terminal, Github, Zap, ArrowRight, Server, Monitor, Copy, Check } from 'lucide-react'
+import { join } from 'path/win32'
 
 const installOptions = [
   {
     id: 'cli-unix',
     name: 'Mac/Linux CLI',
     icon: Terminal,
-    cmd: 'curl https://nextdeploy.one/nextdeploy | sh',
+    cmd: 'curl https://nextdeploy.one/nextdeploy.sh | sh',
     desc: 'Install CLI tool for developers'
   },
   {
@@ -51,29 +52,29 @@ export default function Hero() {
 
         {/* Main headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-100 via-green-200 to-emerald-100 bg-clip-text text-transparent leading-tight">
-          Deploy Next.js
+          NextDeploy: The Ultimate
           <br />
-          On Your Terms
+          "Zero to Production" Engine
         </h1>
 
         {/* Tagline */}
         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          From self-hosted Docker containers on any VPS to true Serverless deployments on the cloud. NextDeploy gives you complete control without the vendor lock-in.
+          Lightning-fast, zero-configuration deployment engine built explicitly for <strong>Next.js</strong>. Native execution, maximum performance, zero vendor lock-in.
         </p>
 
         {/* Trust indicators */}
         <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Docker Native</span>
+            <span>Native AWS Serverless</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Zero Vendor Lock-in</span>
+            <span>Zero-Downtime VPS</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Serverless Ready</span>
+            <span>Native Execution</span>
           </div>
         </div>
 
@@ -153,12 +154,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Coming soon section */}
+          {/* Feature Badge */}
           <div className="mt-8 text-center bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 inline-block mx-auto flex items-center justify-center gap-3 text-emerald-300 text-sm">
-            <Server className="w-4 h-4 shrink-0" />
-            <p>Bring your own server. Active integrations for <strong>AWS</strong>, <strong>GCP</strong>, and other cloud providers are <strong>coming soon</strong>.</p>
+            <Zap className="w-4 h-4 shrink-0" />
+            <p>Deploy to <strong>AWS Serverless</strong> natively with S3 static offloading and Lambda Web Adapter orchestration.</p>
           </div>
         </div>
+
 
       </div>
     </section>

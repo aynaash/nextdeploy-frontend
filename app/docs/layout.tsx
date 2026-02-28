@@ -1,5 +1,6 @@
 import React from "react"
 import DocsSidebar from '@/components/docs-sidebar'
+import DocsFooter from '@/components/docs-footer'
 
 export const metadata = {
   title: 'NextDeploy Documentation',
@@ -15,8 +16,9 @@ export default function DocsLayout({
     <div className="flex min-h-screen bg-slate-950">
       <DocsSidebar />
       <main className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto p-8">
+        <div className="max-w-4xl mx-auto p-8 relative">
           {children}
+          <DocsFooter />
         </div>
       </main>
     </div>

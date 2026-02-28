@@ -2,15 +2,15 @@ export default function VsKamal() {
   return (
     <div className="prose prose-invert max-w-none">
       <h1 className="text-4xl font-bold text-white mb-6">NextDeploy vs Kamal</h1>
-      
+
       <p className="text-gray-300 text-lg mb-8">
         NextDeploy is inspired by <a href="https://kamal-deploy.org/" className="text-emerald-400 hover:text-emerald-300">Kamal</a> (formerly MRSK) but specialized for Next.js deployments.
       </p>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Similarities</h2>
-      
+
       <p className="text-gray-300 mb-6">Both NextDeploy and Kamal:</p>
-      
+
       <ul className="space-y-2 mb-8 text-gray-300">
         <li className="flex gap-3">
           <span className="text-emerald-400">✓</span>
@@ -18,7 +18,7 @@ export default function VsKamal() {
         </li>
         <li className="flex gap-3">
           <span className="text-emerald-400">✓</span>
-          <span>Use Docker for containerization</span>
+          <span>Automated provisioning from zero</span>
         </li>
         <li className="flex gap-3">
           <span className="text-emerald-400">✓</span>
@@ -41,7 +41,7 @@ export default function VsKamal() {
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Key Differences</h2>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">1. Framework Focus</h3>
-      
+
       <div className="overflow-x-auto mb-8">
         <table className="w-full text-sm text-gray-300">
           <thead>
@@ -59,7 +59,7 @@ export default function VsKamal() {
             </tr>
             <tr className="border-b border-slate-800">
               <td className="py-3 px-4"><strong className="text-white">Optimization</strong></td>
-              <td className="py-3 px-4">Next.js-specific builds</td>
+              <td className="py-3 px-4">Native Systemd Service</td>
               <td className="py-3 px-4">Generic Docker</td>
             </tr>
             <tr className="border-b border-slate-800">
@@ -81,7 +81,7 @@ export default function VsKamal() {
       </p>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">2. Secret Management</h3>
-      
+
       <div className="overflow-x-auto mb-8">
         <table className="w-full text-sm text-gray-300">
           <thead>
@@ -117,7 +117,7 @@ export default function VsKamal() {
       </div>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">3. Reverse Proxy</h3>
-      
+
       <div className="overflow-x-auto mb-8">
         <table className="w-full text-sm text-gray-300">
           <thead>
@@ -152,7 +152,7 @@ export default function VsKamal() {
       </p>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">4. Monitoring</h3>
-      
+
       <div className="overflow-x-auto mb-8">
         <table className="w-full text-sm text-gray-300">
           <thead>
@@ -170,7 +170,7 @@ export default function VsKamal() {
             </tr>
             <tr className="border-b border-slate-800">
               <td className="py-3 px-4"><strong className="text-white">Auto-restart</strong></td>
-              <td className="py-3 px-4">Built-in</td>
+              <td className="py-3 px-4">Native systemd manager</td>
               <td className="py-3 px-4">Via Docker restart policy</td>
             </tr>
             <tr className="border-b border-slate-800">
@@ -180,7 +180,7 @@ export default function VsKamal() {
             </tr>
             <tr>
               <td className="py-3 px-4"><strong className="text-white">Logs</strong></td>
-              <td className="py-3 px-4">Aggregated, searchable</td>
+              <td className="py-3 px-4">Native systemd journalctl</td>
               <td className="py-3 px-4">Docker logs</td>
             </tr>
           </tbody>
@@ -188,7 +188,7 @@ export default function VsKamal() {
       </div>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Complete Comparison Table</h2>
-      
+
       <div className="overflow-x-auto mb-8">
         <table className="w-full text-sm text-gray-300">
           <thead>
@@ -230,9 +230,9 @@ export default function VsKamal() {
               <td className="py-3 px-4">Rolling</td>
             </tr>
             <tr className="border-b border-slate-800">
-              <td className="py-3 px-4"><strong className="text-white">Local testing</strong></td>
-              <td className="py-3 px-4"><code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">runimage</code></td>
-              <td className="py-3 px-4">Manual</td>
+              <td className="py-3 px-4"><strong className="text-white">Symlinks</strong></td>
+              <td className="py-3 px-4">True (Zero-Rebuild Rollbacks)</td>
+              <td className="py-3 px-4">False (Container Swaps)</td>
             </tr>
             <tr className="border-b border-slate-800">
               <td className="py-3 px-4"><strong className="text-white">Maturity</strong></td>
@@ -249,9 +249,9 @@ export default function VsKamal() {
       </div>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">When to Use NextDeploy</h2>
-      
+
       <p className="text-gray-300 mb-4">Choose NextDeploy if you:</p>
-      
+
       <ul className="space-y-2 mb-8 text-gray-300">
         <li className="flex gap-3">
           <span className="text-emerald-400">✓</span>
@@ -276,9 +276,9 @@ export default function VsKamal() {
       </ul>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">When to Use Kamal</h2>
-      
+
       <p className="text-gray-300 mb-4">Choose Kamal if you:</p>
-      
+
       <ul className="space-y-2 mb-8 text-gray-300">
         <li className="flex gap-3">
           <span className="text-emerald-400">✓</span>
@@ -306,7 +306,7 @@ export default function VsKamal() {
 
       <h3 className="text-xl font-semibold text-emerald-400 mt-8 mb-3">Kamal</h3>
       <blockquote className="border-l-4 border-emerald-600 pl-4 py-2 text-gray-300 italic mb-6">
-        "Deploy web apps anywhere from bare metal to cloud VMs using Docker"
+        "Deploy web apps anywhere from bare metal to cloud VMs using containers"
         <br />
         <span className="text-sm font-normal">Approach: Framework-agnostic, maximum flexibility</span>
       </blockquote>
@@ -319,7 +319,7 @@ export default function VsKamal() {
       </blockquote>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Summary</h2>
-      
+
       <p className="text-gray-300">
         Both tools are excellent. NextDeploy is specialized for Next.js with built-in optimizations and Doppler integration, while Kamal is more flexible for any framework. Choose based on your specific needs.
       </p>

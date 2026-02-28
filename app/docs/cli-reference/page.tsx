@@ -2,13 +2,13 @@ export default function CLIReference() {
   return (
     <div className="prose prose-invert max-w-none">
       <h1 className="text-4xl font-bold text-white mb-6">CLI Reference</h1>
-      
+
       <p className="text-gray-300 text-lg mb-8">
         Complete command reference for the NextDeploy CLI.
       </p>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Global Flags</h2>
-      
+
       <p className="text-gray-300 mb-4">All commands support these flags:</p>
 
       <div className="overflow-x-auto mb-8">
@@ -49,7 +49,7 @@ export default function CLIReference() {
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">nextdeploy init</h3>
       <p className="text-gray-300 mb-4">Initialize a Next.js project for deployment.</p>
-      
+
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 overflow-x-auto">
         <code className="text-emerald-400">nextdeploy init [flags]</code>
       </pre>
@@ -57,28 +57,28 @@ export default function CLIReference() {
       <p className="text-gray-300 mb-4"><strong className="text-white">What it does:</strong></p>
       <ul className="space-y-2 mb-6 text-gray-300">
         <li>• Creates <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy.yml</code> configuration</li>
-        <li>• Generates optimized <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">Dockerfile</code></li>
-        <li>• Sets up <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">.dockerignore</code></li>
+        <li>• Analyzes Next.js Route Plan</li>
+        <li>• Prepares <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">release/</code> execution environment</li>
       </ul>
 
       <p className="text-gray-300 mb-4"><strong className="text-white">Example:</strong></p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-{`nextdeploy init
+          {`nextdeploy init
 nextdeploy init --template minimal`}
         </code>
       </pre>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">nextdeploy build</h3>
-      <p className="text-gray-300 mb-4">Build a Docker image for your application.</p>
-      
+      <p className="text-gray-300 mb-4">Build a native deployment bundle for your application.</p>
+
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 overflow-x-auto">
         <code className="text-emerald-400">nextdeploy build [flags]</code>
       </pre>
 
       <p className="text-gray-300 mb-4"><strong className="text-white">What it does:</strong></p>
       <ul className="space-y-2 mb-6 text-gray-300">
-        <li>• Builds Docker image with smart tagging</li>
+        <li>• Builds deployment bundle with smart tagging</li>
         <li>• Tags with git commit hash</li>
         <li>• Optionally pushes to registry</li>
       </ul>
@@ -92,7 +92,7 @@ nextdeploy init --template minimal`}
       <p className="text-gray-300 mb-4"><strong className="text-white">Examples:</strong></p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-{`# Basic build
+          {`# Basic build
 nextdeploy build
 
 # Build and push
@@ -105,7 +105,7 @@ NODE_ENV=production nextdeploy build --no-cache`}
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">nextdeploy ship</h3>
       <p className="text-gray-300 mb-4">Deploy your application to a server.</p>
-      
+
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 overflow-x-auto">
         <code className="text-emerald-400">nextdeploy ship [flags]</code>
       </pre>
@@ -114,8 +114,8 @@ NODE_ENV=production nextdeploy build --no-cache`}
       <ol className="space-y-2 mb-6 text-gray-300 list-decimal list-inside">
         <li>Verifies server connectivity</li>
         <li>Transfers configuration files</li>
-        <li>Pulls Docker image</li>
-        <li>Deploys container</li>
+        <li>Synchronizes release bundle</li>
+        <li>Executes zero-downtime port swap</li>
         <li>Verifies deployment</li>
       </ol>
 
@@ -129,7 +129,7 @@ NODE_ENV=production nextdeploy build --no-cache`}
       <p className="text-gray-300 mb-4"><strong className="text-white">Examples:</strong></p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-{`# Basic deployment
+          {`# Basic deployment
 nextdeploy ship
 
 # With HTTPS setup
@@ -142,7 +142,7 @@ nextdeploy ship --bluegreen`}
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">nextdeploy logs</h3>
       <p className="text-gray-300 mb-4">View application logs.</p>
-      
+
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 overflow-x-auto">
         <code className="text-emerald-400">nextdeploy logs [flags]</code>
       </pre>
@@ -157,7 +157,7 @@ nextdeploy ship --bluegreen`}
       <p className="text-gray-300 mb-4"><strong className="text-white">Examples:</strong></p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-{`# View last 100 lines
+          {`# View last 100 lines
 nextdeploy logs
 
 # Follow logs in real-time
@@ -170,10 +170,10 @@ nextdeploy logs --tail 50`}
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">nextdeploy status</h3>
       <p className="text-gray-300 mb-4">Check deployment status.</p>
-      
+
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-{`Application: myapp
+          {`Application: myapp
 Status: running
 Uptime: 2d 5h 32m
 Health: healthy
@@ -183,7 +183,7 @@ Memory: 256MB / 1GB`}
       </pre>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Other Commands</h2>
-      
+
       <ul className="space-y-3 mb-8 text-gray-300">
         <li><code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy restart</code> - Gracefully restart the application</li>
         <li><code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy stop</code> - Stop the application</li>
@@ -193,10 +193,10 @@ Memory: 256MB / 1GB`}
       </ul>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Complete Deployment Workflow</h2>
-      
+
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
         <code className="text-emerald-400">
-{`# 1. Initialize
+          {`# 1. Initialize
 nextdeploy init
 
 # 2. Configure

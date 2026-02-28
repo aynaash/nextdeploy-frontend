@@ -2,102 +2,15 @@ export default function Troubleshooting() {
   return (
     <div className="prose prose-invert max-w-none">
       <h1 className="text-4xl font-bold text-white mb-6">Troubleshooting Guide</h1>
-      
+
       <p className="text-gray-300 text-lg mb-8">
-        Common issues and solutions when using NextDeploy.
+        Common issues and solutions when using NextDeploy's Native Execution engine.
       </p>
 
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Installation Issues</h2>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Docker not found</h3>
-      
-      <p className="text-emerald-400 font-semibold mb-3">Error:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">Error: docker is not installed or not functioning</code>
-      </pre>
-
-      <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`# Check Docker installation
-docker --version
-
-# Start Docker (macOS/Windows)
-open -a Docker
-
-# Start Docker (Linux)
-sudo systemctl start docker
-
-# Verify Docker is running
-docker ps`}
-        </code>
-      </pre>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Permission denied (Docker)</h3>
-      
-      <p className="text-emerald-400 font-semibold mb-3">Error:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">permission denied while trying to connect to the Docker daemon socket</code>
-      </pre>
-
-      <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`# Add user to docker group (Linux)
-sudo usermod -aG docker $USER
-
-# Log out and back in, or run:
-newgrp docker
-
-# Verify
-docker ps`}
-        </code>
-      </pre>
-
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Build Issues</h2>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Build fails with "no Dockerfile found"</h3>
-      
-      <p className="text-emerald-400 font-semibold mb-3">Error:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">Error: no Dockerfile found in current directory</code>
-      </pre>
-
-      <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`# Initialize project first
-nextdeploy init
-
-# Or create Dockerfile manually`}
-        </code>
-      </pre>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Out of disk space</h3>
-      
-      <p className="text-emerald-400 font-semibold mb-3">Error:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">Error: no space left on device</code>
-      </pre>
-
-      <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`# Clean up Docker
-docker system prune -a
-
-# Remove unused images
-docker image prune -a
-
-# Check disk space
-df -h`}
-        </code>
-      </pre>
-
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Deployment Issues</h2>
+      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Connection Issues</h2>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">SSH connection failed</h3>
-      
+
       <p className="text-emerald-400 font-semibold mb-3">Error:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
         <code className="text-emerald-400">Error: SSH connection failed: Permission denied (publickey)</code>
@@ -106,7 +19,7 @@ df -h`}
       <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
         <code className="text-emerald-400">
-{`# Test SSH connection
+          {`# Test SSH connection directly
 ssh -i ~/.ssh/id_rsa deploy@YOUR_SERVER_IP
 
 # Generate new SSH key if needed
@@ -119,78 +32,85 @@ ssh-copy-id -i ~/.ssh/id_rsa deploy@YOUR_SERVER_IP
         </code>
       </pre>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Container fails to start</h3>
-      
+      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Runtime & Deployment Issues</h2>
+
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">NextDeploy Daemon Not Responding</h3>
+
       <p className="text-emerald-400 font-semibold mb-3">Error:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">Error: container exited with code 1</code>
+        <code className="text-emerald-400">Connection refused to NextDeploy Daemon on port 8443</code>
       </pre>
 
       <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
         <code className="text-emerald-400">
-{`# Check container logs on server
-ssh deploy@YOUR_SERVER docker logs CONTAINER_NAME
+          {`# 1. SSH into your VPS
+ssh deploy@YOUR_SERVER_IP
 
-# Test locally first
-nextdeploy runimage
+# 2. Check the daemon status
+sudo systemctl status nextdeployd
 
-# Common issues:
-# 1. Port already in use
-# 2. Missing environment variables
-# 3. Database connection failed`}
+# 3. Restart the daemon if necessary
+sudo systemctl restart nextdeployd
+
+# 4. Alternatively, replay the prepare step locally
+nextdeploy prepare`}
+        </code>
+      </pre>
+
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Application crashes on startup</h3>
+
+      <p className="text-gray-300 mb-4"><strong className="text-white">Symptoms:</strong></p>
+      <ul className="space-y-2 mb-8 text-gray-300 list-disc list-inside">
+        <li>Systemd service enters a failed state</li>
+        <li>Health checks fail during deployment</li>
+        <li>502 Bad Gateway from Caddy</li>
+      </ul>
+
+      <p className="text-emerald-400 font-semibold mb-3">Debug steps:</p>
+      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
+        <code className="text-emerald-400">
+          {`# 1. Check systemd native logs via NextDeploy CLI
+nextdeploy logs --tail 100
+
+# 2. Re-run locally to ensure build succeeds
+bun run build && bun run start
+
+# 3. SSH in to check raw application logs
+ssh deploy@SERVER journalctl -u nextdeploy-myapp.service -n 50 --no-pager
+
+# 4. Check for missing runtime environment variables
+doppler run -- nextdeploy deploy`}
         </code>
       </pre>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">Port already in use</h3>
-      
+
       <p className="text-emerald-400 font-semibold mb-3">Error:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">Error: bind: address already in use</code>
+        <code className="text-emerald-400">Error: listen EADDRINUSE: address already in use :::3000</code>
       </pre>
 
       <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
         <code className="text-emerald-400">
-{`# Find process using port
+          {`# NextDeploy usually handles port swapping, but if a rogue process exists:
+
+# 1. SSH into the server
+ssh deploy@SERVER
+
+# 2. Find the rogue process
 sudo lsof -i :3000
 
-# Kill the process
-sudo kill -9 PID
-
-# Or use different port in nextdeploy.yml
-deployment:
-  container:
-    ports:
-      - "8080:3000"`}
+# 3. Kill the process
+sudo kill -9 PID`}
         </code>
       </pre>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Image pull failed</h3>
-      
-      <p className="text-emerald-400 font-semibold mb-3">Error:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">Error: failed to pull image: unauthorized</code>
-      </pre>
-
-      <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`# Login to registry
-docker login ghcr.io
-
-# Or use credentials flag
-nextdeploy ship --credentials
-
-# For ECR, provision user
-nextdeploy build --provision-ecr-user`}
-        </code>
-      </pre>
-
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Secret Management Issues</h2>
+      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Secret Management Issues (Doppler)</h2>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">Doppler token invalid</h3>
-      
+
       <p className="text-emerald-400 font-semibold mb-3">Error:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
         <code className="text-emerald-400">Error: invalid Doppler token</code>
@@ -199,7 +119,7 @@ nextdeploy build --provision-ecr-user`}
       <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
         <code className="text-emerald-400">
-{`# Re-login to Doppler
+          {`# Re-login to Doppler
 doppler login
 
 # Verify setup
@@ -211,7 +131,7 @@ doppler configure get token`}
       </pre>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">Secrets not loading</h3>
-      
+
       <p className="text-emerald-400 font-semibold mb-3">Error:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
         <code className="text-emerald-400">Error: DATABASE_URL is not defined</code>
@@ -220,78 +140,16 @@ doppler configure get token`}
       <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
         <code className="text-emerald-400">
-{`# Verify secrets exist
+          {`# Verify secrets exist in Doppler
 doppler secrets
 
-# Check environment
-doppler configure get
-
-# Run with Doppler
-doppler run -- nextdeploy build`}
+# Force NextDeploy to re-sync environmental variables
+nextdeploy deploy --sync-secrets`}
         </code>
-      </pre>
-
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">Runtime Issues</h2>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Application crashes on startup</h3>
-      
-      <p className="text-gray-300 mb-4"><strong className="text-white">Symptoms:</strong></p>
-      <ul className="space-y-2 mb-8 text-gray-300 list-disc list-inside">
-        <li>Container starts then immediately exits</li>
-        <li>Health checks fail</li>
-        <li>502 Bad Gateway</li>
-      </ul>
-
-      <p className="text-emerald-400 font-semibold mb-3">Debug steps:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`# 1. Check logs
-nextdeploy logs --tail 100
-
-# 2. Test locally
-nextdeploy runimage
-
-# 3. Check environment variables
-ssh deploy@SERVER docker exec CONTAINER env
-
-# 4. Check database connection
-ssh deploy@SERVER docker exec CONTAINER nc -zv db-host 5432`}
-        </code>
-      </pre>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Health check always failing</h3>
-      
-      <p className="text-emerald-400 font-semibold mb-3">Solution:</p>
-
-      <p className="text-gray-300 mb-4"><strong className="text-white">1. Create health endpoint</strong> (<code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">app/api/health/route.ts</code>):</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`export async function GET() {
-  return Response.json({ status: 'ok' });
-}`}
-        </code>
-      </pre>
-
-      <p className="text-gray-300 mb-4"><strong className="text-white">2. Update nextdeploy.yml:</strong></p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-6 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-{`deployment:
-  container:
-    healthcheck:
-      path: /api/health
-      interval: 30s
-      timeout: 5s
-      retries: 3`}
-        </code>
-      </pre>
-
-      <p className="text-gray-300 mb-4"><strong className="text-white">3. Test endpoint:</strong></p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
-        <code className="text-emerald-400">curl http://localhost:3000/api/health</code>
       </pre>
 
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Need Help?</h2>
-      
+
       <ul className="space-y-3 text-gray-300 mb-8">
         <li className="flex gap-3">
           <span className="text-emerald-400">•</span>
@@ -300,10 +158,6 @@ ssh deploy@SERVER docker exec CONTAINER nc -zv db-host 5432`}
         <li className="flex gap-3">
           <span className="text-emerald-400">•</span>
           <span><a href="https://github.com/aynaash/nextdeploy/discussions" className="text-emerald-400 hover:text-emerald-300">Ask questions</a> - GitHub Discussions</span>
-        </li>
-        <li className="flex gap-3">
-          <span className="text-emerald-400">•</span>
-          <span><a href="/docs" className="text-emerald-400 hover:text-emerald-300">Read the docs</a> - Full documentation</span>
         </li>
       </ul>
     </div>

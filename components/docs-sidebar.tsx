@@ -5,37 +5,7 @@ import { usePathname } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 
-const docCategories = [
-  {
-    title: 'Getting Started',
-    items: [
-      { title: 'Introduction', href: '/docs' },
-      { title: 'Getting Started', href: '/docs/getting-started' },
-      { title: 'Installation', href: '/docs/installation' },
-    ]
-  },
-  {
-    title: 'Configuration',
-    items: [
-      { title: 'Configuration Guide', href: '/docs/configuration' },
-      { title: 'Secret Management', href: '/docs/secrets' },
-      { title: 'First Deployment', href: '/docs/first-deployment' },
-    ]
-  },
-  {
-    title: 'Reference',
-    items: [
-      { title: 'CLI Reference', href: '/docs/cli-reference' },
-      { title: 'Troubleshooting', href: '/docs/troubleshooting' },
-    ]
-  },
-  {
-    title: 'Comparisons',
-    items: [
-      { title: 'vs Kamal', href: '/docs/vs-kamal' },
-    ]
-  }
-]
+import { docCategories } from '@/lib/docs-config'
 
 export default function DocsSidebar() {
   const pathname = usePathname()
@@ -67,9 +37,8 @@ export default function DocsSidebar() {
             >
               {category.title}
               <ChevronDown
-                className={`w-4 h-4 transition-transform ${
-                  expandedCategories.includes(category.title) ? 'rotate-180' : ''
-                }`}
+                className={`w-4 h-4 transition-transform ${expandedCategories.includes(category.title) ? 'rotate-180' : ''
+                  }`}
               />
             </button>
 
@@ -79,11 +48,10 @@ export default function DocsSidebar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-3 py-2 rounded text-sm transition-colors ${
-                      isActive(item.href)
+                    className={`block px-3 py-2 rounded text-sm transition-colors ${isActive(item.href)
                         ? 'bg-emerald-600/20 text-emerald-400 font-medium'
                         : 'text-gray-400 hover:text-gray-200 hover:bg-slate-800/50'
-                    }`}
+                      }`}
                   >
                     {item.title}
                   </Link>
