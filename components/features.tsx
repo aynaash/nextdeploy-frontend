@@ -1,31 +1,37 @@
-'use client'
+"use client";
 
 const features = [
   {
-    title: 'Native AWS Serverless',
-    description: 'Deploy to Lambda, S3, and CloudFront natively. Intelligent payload splitting with zero vendor lock-in.'
+    title: "The CLI (Command & Control)",
+    description:
+      "Your local companion. It builds your app, encrypts your secrets, and coordinates with the server via encrypted SSH tunnels.",
   },
   {
-    title: 'Zero-Downtime Hot Swaps',
-    description: 'Advanced Release/Symlink architecture on VPS. Seamless traffic shifting with zero 502 errors.'
+    title: "The Daemon (The Brain)",
+    description:
+      "A lightweight Go process running on your server. It manages the application lifecycle, allocates ports, swaps releases, and monitors health.",
   },
   {
-    title: 'Native Log Streaming',
-    description: 'Stream systemd journal logs in real-time. Filter by specific request paths and routes.'
+    title: "Caddy (The Gatekeeper)",
+    description:
+      "A world-class reverse proxy that handles automatic TLS (HTTPS), Gzip/Zstd compression, and smart routing.",
   },
   {
-    title: 'Instant Rollbacks',
-    description: 'Shift the /current symlink back to any previous release instantly if something goes wrong.'
+    title: "Native Execution",
+    description:
+      "No Docker, no virtualization. We run your app directly on the metal (using Bun or Node), maximizing performance and minimizing overhead.",
   },
   {
-    title: 'Caddy Orchestration',
-    description: 'Native Caddy integration for automatic SSL and high-performance reverse proxying.'
+    title: "Zero-Downtime Hot Swaps",
+    description:
+      "Daemon-driven architecture ensures that new releases are swapped seamlessly, with automatic rollbacks if health checks fail.",
   },
   {
-    title: 'Zero-Touch CI/CD',
-    description: 'Generate optimized GitHub Actions pipelines with a single command for automated shipping.'
-  }
-]
+    title: "Full Control",
+    description:
+      "You own the server, you own the secrets, you own the logs. Total infrastructure ownership without the complexity.",
+  },
+];
 
 export default function Features() {
   return (
@@ -62,5 +68,5 @@ export default function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }

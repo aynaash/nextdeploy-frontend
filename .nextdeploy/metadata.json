@@ -2,12 +2,12 @@
   "app_name": "nextdeploy",
   "next_version": "16.0.10",
   "nextbuildmetadata": {
-    "buildId": "RL7JTCsucNmjd4suz1xrw",
+    "buildId": "crY_V2cwMFt-HNwvPkNsN",
     "buildManifest": {
       "devFiles": [],
       "lowPriorityFiles": [
-        "static/RL7JTCsucNmjd4suz1xrw/_ssgManifest.js",
-        "static/RL7JTCsucNmjd4suz1xrw/_buildManifest.js"
+        "static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
+        "static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js"
       ],
       "pages": {
         "/_app": []
@@ -641,30 +641,6 @@
     "static_folder": null,
     "next_static": [
       {
-        "path": ".next/static/RL7JTCsucNmjd4suz1xrw/_buildManifest.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/RL7JTCsucNmjd4suz1xrw/_buildManifest.js",
-        "public_path": "/_next/static/RL7JTCsucNmjd4suz1xrw/_buildManifest.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 219
-      },
-      {
-        "path": ".next/static/RL7JTCsucNmjd4suz1xrw/_clientMiddlewareManifest.json",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/RL7JTCsucNmjd4suz1xrw/_clientMiddlewareManifest.json",
-        "public_path": "/_next/static/RL7JTCsucNmjd4suz1xrw/_clientMiddlewareManifest.json",
-        "type": "document",
-        "extension": ".json",
-        "size": 2
-      },
-      {
-        "path": ".next/static/RL7JTCsucNmjd4suz1xrw/_ssgManifest.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/RL7JTCsucNmjd4suz1xrw/_ssgManifest.js",
-        "public_path": "/_next/static/RL7JTCsucNmjd4suz1xrw/_ssgManifest.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 80
-      },
-      {
         "path": ".next/static/chunks/041b3e0e3c954a8f.js",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/041b3e0e3c954a8f.js",
         "public_path": "/_next/static/chunks/041b3e0e3c954a8f.js",
@@ -681,14 +657,6 @@
         "size": 281
       },
       {
-        "path": ".next/static/chunks/5943f8379a72c367.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/5943f8379a72c367.js",
-        "public_path": "/_next/static/chunks/5943f8379a72c367.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 24353
-      },
-      {
         "path": ".next/static/chunks/796e7f5bb07ad38d.js",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/796e7f5bb07ad38d.js",
         "public_path": "/_next/static/chunks/796e7f5bb07ad38d.js",
@@ -703,6 +671,14 @@
         "type": "script",
         "extension": ".js",
         "size": 85404
+      },
+      {
+        "path": ".next/static/chunks/7e0ac25b66b02481.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/7e0ac25b66b02481.js",
+        "public_path": "/_next/static/chunks/7e0ac25b66b02481.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 24228
       },
       {
         "path": ".next/static/chunks/8a78cbfae800a97c.js",
@@ -793,6 +769,30 @@
         "size": 9945
       },
       {
+        "path": ".next/static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js",
+        "public_path": "/_next/static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 219
+      },
+      {
+        "path": ".next/static/crY_V2cwMFt-HNwvPkNsN/_clientMiddlewareManifest.json",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/crY_V2cwMFt-HNwvPkNsN/_clientMiddlewareManifest.json",
+        "public_path": "/_next/static/crY_V2cwMFt-HNwvPkNsN/_clientMiddlewareManifest.json",
+        "type": "document",
+        "extension": ".json",
+        "size": 2
+      },
+      {
+        "path": ".next/static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
+        "public_path": "/_next/static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 80
+      },
+      {
         "path": ".next/static/media/4fa387ec64143e14-s.c1fdd6c2.woff2",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/media/4fa387ec64143e14-s.c1fdd6c2.woff2",
         "public_path": "/_next/static/media/4fa387ec64143e14-s.c1fdd6c2.woff2",
@@ -843,8 +843,9 @@
     ],
     "other_assets": null
   },
-  "git_commit": "288179c",
-  "generated_at": "2026-03-01T02:06:37+03:00",
+  "git_commit": "f8b19a3",
+  "git_dirty": true,
+  "generated_at": "2026-03-01T04:53:12+03:00",
   "build_lock_file": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/build.lock",
   "metadata_file_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/metadata.json",
   "assets_output_dir": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/assets",
@@ -962,7 +963,7 @@
       "app_build_manifest": "",
       "react_loadable_manifest": "",
       "package_json": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/package.json",
-      "last_build_timestamp": "2026-03-01T02:06:37+03:00"
+      "last_build_timestamp": "2026-03-01T04:53:12+03:00"
     },
     "cache": {
       "images": null,
@@ -1008,7 +1009,7 @@
     "build_metadata": {
       "next_version": "16.0.10",
       "build_target": "",
-      "build_id": "RL7JTCsucNmjd4suz1xrw",
+      "build_id": "crY_V2cwMFt-HNwvPkNsN",
       "has_typescript": false,
       "has_eslint": false,
       "output_mode": "standalone"

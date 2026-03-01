@@ -59,22 +59,18 @@ export default function GettingStarted() {
       <h2 className="text-2xl font-bold text-white mt-12 mb-4">Installation</h2>
 
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">CLI (All Platforms)</h3>
-      <p className="text-gray-300 mb-4">Install the NextDeploy CLI using webi:</p>
+      <p className="text-gray-300 mb-4">Install the NextDeploy toolbelt using our global installer:</p>
 
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
-        <code className="text-emerald-400">curl https://webi.sh/nextdeploy | sh</code>
+        <code className="text-emerald-400">curl -sSf https://nextdeploy.one/install.sh | sh</code>
       </pre>
 
-      <p className="text-gray-300 mb-8">Or download directly from <a href="#" className="text-emerald-400 hover:text-emerald-300">GitHub Releases</a>.</p>
-
       <h3 className="text-xl font-semibold text-white mt-8 mb-3">Daemon (Linux Servers Only)</h3>
-      <p className="text-gray-300 mb-4">On your VPS, install the daemon:</p>
+      <p className="text-gray-300 mb-4">On your VPS, set up the production engine:</p>
 
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-          {`curl https://webi.sh/nextdeployd | sh
-sudo systemctl enable nextdeployd
-sudo systemctl start nextdeployd`}
+          {`curl -sSf https://nextdeploy.one/daemon.sh | sh`}
         </code>
       </pre>
 
@@ -85,62 +81,26 @@ sudo systemctl start nextdeployd`}
 
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-          {`cd my-nextjs-app
-nextdeploy init`}
+          {`nextdeploy init`}
         </code>
       </pre>
 
-      <p className="text-gray-300 mb-8">This creates:
-        <ul className="space-y-1 mt-2 text-gray-300">
-          <li>• <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy.yml</code> - Main Configuration file</li>
-          <li>• <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">.nextdeploy/metadata.json</code> - Cached route breakdown</li>
-        </ul>
-      </p>
+      <p className="text-gray-300 mb-8">This scaffolds your project and generates a <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy.yml</code>.</p>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">2. Configure Deployment</h3>
-      <p className="text-gray-300 mb-4">Edit <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy.yml</code> for your desired target:</p>
-
-      <p className="text-gray-300 mb-2 font-semibold">For AWS Serverless:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-          {`version: "1.0"
-target_type: "serverless"
-serverless:
-  provider: "aws"
-  region: "us-east-1"
-  s3_bucket: "my-nextjs-assets"`}
-        </code>
-      </pre>
-
-      <p className="text-gray-300 mb-2 font-semibold">For Linux VPS:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-          {`version: "1.0"
-target_type: "vps"
-servers:
-  - host: 192.168.1.100
-    ssh_key: "~/.ssh/id_rsa"`}
-        </code>
-      </pre>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">3. Generate CI Pipeline (Optional)</h3>
-      <p className="text-gray-300 mb-4">Want Zero-Touch shipping? Generate a GitHub Action instantly:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
-        <code className="text-emerald-400">nextdeploy generate-ci</code>
-      </pre>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">4. Deploy (The Act of Shipping)</h3>
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">2. Ship It!</h3>
+      <p className="text-gray-300 mb-4">The "Magic Button". Point it to your server/target and run:</p>
       <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto">
         <code className="text-emerald-400">
-          {`nextdeploy build
-nextdeploy deploy`}
+          {`nextdeploy ship`}
         </code>
       </pre>
 
-      <p className="text-gray-300 mb-8">This will securely execute your deployment:
+      <p className="text-gray-300 mb-8">This single command handles the entire lifecycle:
         <ul className="space-y-1 mt-2 text-gray-300">
-          <li>• <strong>VPS:</strong> Extracts bundle to <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">release/</code> and performs a zero-downtime port swap.</li>
-          <li>• <strong>Serverless:</strong> Syncs static assets to S3 and wraps logic in the AWS Lambda Web Adapter.</li>
+          <li>• <strong>Build:</strong> Compiles your Next.js app for production.</li>
+          <li>• <strong>Pack:</strong> Creates an atomic release artifact.</li>
+          <li>• <strong>Transport:</strong> Uploads via secure SSH tunnels.</li>
+          <li>• <strong>Activate:</strong> Performs a zero-downtime hot swap.</li>
         </ul>
       </p>
 

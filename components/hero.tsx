@@ -18,21 +18,21 @@ const installOptions = [
     id: "cli-unix",
     name: "Mac/Linux CLI",
     icon: Terminal,
-    cmd: "curl https://nextdeploy.one/nextdeploy.sh | sh",
+    cmd: "curl -sSf https://nextdeploy.one/install.sh | sh",
     desc: "Install CLI tool for developers",
   },
   {
     id: "cli-win",
     name: "Windows CLI",
     icon: Monitor,
-    cmd: "curl https://nextdeploy.one/nextdeploy.bat | sh",
+    cmd: "curl -sSf https://nextdeploy.one/install.bat | sh",
     desc: "Install CLI tool on Windows",
   },
   {
     id: "daemon",
     name: "Ubuntu Server",
     icon: Server,
-    cmd: "curl https://nextdeploy.one/nextdeployd.sh | sh",
+    cmd: "curl -sSf https://nextdeploy.one/daemon.sh | sh",
     desc: "Install NextDeploy Daemon",
   },
 ];
@@ -57,37 +57,37 @@ export default function Hero() {
         <div className="mb-8 inline-flex items-center gap-3 px-4 py-2 mt-20 rounded-full bg-emerald-900/20 backdrop-blur-sm border border-emerald-500/30 hover:border-emerald-500/60 transition-all">
           <Zap className="w-5 h-5 text-emerald-400" />
           <span className="text-emerald-100 font-semibold text-sm">
-            Self-Hosted Next.js Deployment
+            Native. Transparent. Fast.
           </span>
         </div>
 
         {/* Main headline */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-100 via-green-200 to-emerald-100 bg-clip-text text-transparent leading-tight">
-          NextDeploy: The Ultimate
+          Next.js Deployment
           <br />
-          "Zero to Production" Engine
+          Without the Black Box.
         </h1>
 
         {/* Tagline */}
         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Lightning-fast, zero-configuration deployment engine built explicitly
-          for <strong>Next.js</strong>. Native execution, maximum performance,
-          zero vendor lock-in.
+          The high-performance, developer-first deployment engine.
+          Transform any VPS into a premium hosting platform with
+          <strong> total ownership</strong> and <strong>zero-downtime</strong> updates.
         </p>
 
         {/* Trust indicators */}
         <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Native Serverful and Serverless</span>
+            <span>Zero-Virtualization Overhead</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Zero-Downtime</span>
+            <span>Atomic Release Swaps</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Native Execution</span>
+            <span>Encrypted Secret Injection</span>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function Hero() {
             href="#install"
             className="px-8 py-3 w-full sm:w-auto rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold transition-all duration-200 flex items-center justify-center gap-2 group"
           >
-            Get Started
+            Start Shipping
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -126,11 +126,10 @@ export default function Hero() {
                   <button
                     key={option.id}
                     onClick={() => setActiveTab(option)}
-                    className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors border-b-2 whitespace-nowrap ${
-                      isActive
-                        ? "text-emerald-400 border-emerald-500 bg-slate-800/50"
-                        : "text-gray-400 border-transparent hover:text-gray-200 hover:bg-slate-800/30"
-                    }`}
+                    className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors border-b-2 whitespace-nowrap ${isActive
+                      ? "text-emerald-400 border-emerald-500 bg-slate-800/50"
+                      : "text-gray-400 border-transparent hover:text-gray-200 hover:bg-slate-800/30"
+                      }`}
                   >
                     <Icon className="w-4 h-4" />
                     {option.name}

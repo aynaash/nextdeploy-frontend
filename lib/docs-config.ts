@@ -13,6 +13,7 @@ export const docCategories: DocCategory[] = [
         title: 'Getting Started',
         items: [
             { title: 'Introduction', href: '/docs' },
+            { title: 'Technical Architecture', href: '/docs/architecture' },
             { title: 'Getting Started', href: '/docs/getting-started' },
             { title: 'Installation', href: '/docs/installation' },
         ]
