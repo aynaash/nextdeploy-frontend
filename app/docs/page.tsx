@@ -1,127 +1,546 @@
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import Link from "next/link";
+import { Zap, Terminal, Server, Shield, Activity, Share2 } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { CodeBlock } from "@/components/copy-button";
+import GitHubStarButton from "@/components/github-star-button";
 
 export default function DocsIndex() {
   return (
-    <div className="py-12">
-      <h1 className="text-4xl font-bold text-white mb-6">NextDeploy: The Ultimate "Zero to Production" Engine</h1>
+    <div className="py-12 prose prose-invert max-w-none">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <h1 className="text-4xl font-bold text-white m-0">
+          NextDeploy Documentation
+        </h1>
+        <GitHubStarButton />
+      </div>
 
       <p className="text-gray-300 text-lg mb-8">
-        NextDeploy is a lightning-fast, zero-configuration deployment engine built explicitly for <strong>Next.js</strong>. It bridges the gap between your local development environment and production—whether that means a native Linux VPS or a globally distributed Serverless AWS architecture.
+        Welcome to NextDeploy! This guide will help you understand the platform,
+        install the necessary tools, and deploy your first Next.js application
+        in minutes.
       </p>
 
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">🚀 The Core Philosophy</h2>
-      <p className="text-gray-300 mb-6">
-        Docker is heavy. SSH pipelines are brittle. Vercel is expensive.
-        NextDeploy believes in <strong>Native Execution</strong>. By utilizing Go, <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">systemd</code>, Caddy, and CloudFront natively, we orchestrate your fullstack Next.js applications using the bare-metal primitives of the web, guaranteeing maximum performance with zero overhead.
-      </p>
+      <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4 mb-8 flex gap-3">
+        <div className="text-amber-400 mt-0.5">⚠️</div>
+        <div>
+          <h4 className="text-amber-400 font-semibold mb-1">
+            Warning:Hobby Project
+          </h4>
+          <p className="text-amber-200/70 text-sm">
+            NextDeploy is currently a hobby project and is not intended for
+            production use as of now. Use it at your own risk for testing and
+            personal projects.
+          </p>
+        </div>
+      </div>
 
       <hr className="border-slate-800 my-10" />
 
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">🏰 Our Main Moat: Fullstack Next.js on AWS (Serverless)</h2>
+      {/* --- Getting Started Section --- */}
+      <h2 className="text-3xl font-bold text-white mb-6">
+        What is NextDeploy?
+      </h2>
       <p className="text-gray-300 mb-4">
-        While NextDeploy offers incredible zero-downtime VPS deployments, our true competitive advantage is our ability to natively deploy <strong>Fullstack Next.js to AWS Serverless</strong> without Vendor Lock-in.
+        NextDeploy is a self-hosted deployment platform built exclusively for
+        Next.js applications. Think of it as your own personal Vercel, but with:
       </p>
-
-      <p className="text-gray-300 mb-4">When you configure NextDeploy for <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">target_type: "serverless"</code>:</p>
-      <ol className="list-decimal pl-6 space-y-2 mb-6 text-gray-300">
-        <li><strong>Intelligent Payload Splitting:</strong> The CLI natively analyzes your <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">.nextdeploy/metadata.json</code> Route Plan.</li>
-        <li><strong>CDN Static Offloading:</strong> All <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">/_next/static/*</code> assets and <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">public/</code> files are zipped and securely synced directly to an <strong>Amazon S3 Bucket</strong>, fronted by <strong>CloudFront</strong> with <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">immutable</code> Edge caching.</li>
-        <li><strong>The Lambda Web Adapter:</strong> Your Next.js Node/Bun process is packaged alongside the AWS Lambda Web Adapter. This allows your standard Next.js SSR server, API routes, and Middleware to run unmodified inside an <strong>AWS Lambda Function</strong>.</li>
-        <li><strong>Zero-Config Routing:</strong> NextDeploy automatically wires CloudFront to route static requests to S3 and dynamic/API requests to Lambda.</li>
-      </ol>
-
-      <p className="text-emerald-400 font-semibold mb-8">
-        The Result: You get Vercel-like globally distributed auto-scaling and edge caching, all deployed directly into your AWS account where it costs pennies, entirely automated via the NextDeploy CLI.
-      </p>
-
-      <hr className="border-slate-800 my-10" />
-
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">💻 Getting Started (The Developer Experience)</h2>
-      <p className="text-gray-300 mb-8">NextDeploy is designed to be frictionless.</p>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">1. Initialization</h3>
-      <p className="text-gray-300 mb-4">Run this once in your Next.js project directory:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-2 overflow-x-auto text-sm">
-        <code className="text-emerald-400">nextdeploy init</code>
-      </pre>
-      <p className="text-sm text-gray-400 italic mb-8">NextDeploy will instantly analyze your Next.js project, identifying your Router Type (App/Pages), Output Mode, and static/dynamic route counts. It scaffolds a nextdeploy.yml configuration file.</p>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">2. Configure Your Target</h3>
-      <p className="text-gray-300 mb-4">Edit your <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeploy.yml</code>:</p>
-
-      <p className="text-gray-300 mb-2 font-semibold">For VPS:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-4 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-          {`version: 1.0
-target_type: "vps"
-servers:
-  - host: 192.168.1.100
-    ssh_key: "~/.ssh/id_rsa"`}
-        </code>
-      </pre>
-
-      <p className="text-gray-300 mb-2 font-semibold">For Serverless (AWS):</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-8 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-          {`version: 1.0
-target_type: "serverless"
-serverless:
-  provider: "aws"
-  region: "us-east-1"
-  s3_bucket: "my-nextjs-assets"`}
-        </code>
-      </pre>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">3. Server Preparation (VPS Only)</h3>
-      <p className="text-gray-300 mb-4">If deploying to a VPS, run:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-2 overflow-x-auto text-sm">
-        <code className="text-emerald-400">nextdeploy prepare</code>
-      </pre>
-      <p className="text-sm text-gray-400 italic mb-8">NextDeploy securely connects via Trust-On-First-Use (TOFU) SSH, installs Node.js/Bun, configures Caddy, and installs the nextdeployd daemon.</p>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">4. Continuous Integration (Zero-Touch)</h3>
-      <p className="text-gray-300 mb-4">Don't want to deploy from your laptop?</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-2 overflow-x-auto text-sm">
-        <code className="text-emerald-400">nextdeploy generate-ci</code>
-      </pre>
-      <p className="text-sm text-gray-400 italic mb-8">This generates a .github/workflows/nextdeploy.yml GitHub Action. Simply add your SSH Key to GitHub Secrets, push to main, and NextDeploy handles the rest automatically in the cloud.</p>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">5. Deployment (The Act of Shipping)</h3>
-      <p className="text-gray-300 mb-4">When you are ready, or when your CI/CD pipeline triggers:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-2 overflow-x-auto text-sm">
-        <code className="text-emerald-400">
-          {`nextdeploy build
-nextdeploy deploy`}
-        </code>
-      </pre>
-      <ul className="list-disc pl-6 space-y-2 mb-8 text-gray-300">
-        <li>The CLI analyzes your route plan.</li>
-        <li><strong>If VPS:</strong> It uploads your bundle, and <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">nextdeployd</code> extracts it to a new <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">release/</code> directory, orchestrating a zero-downtime port swap and Caddy reload.</li>
-        <li><strong>If Serverless:</strong> It executes the AWS S3 Sync and Lambda Web Adapter wrap, deploying your fullstack app infinitely scalable.</li>
+      <ul className="space-y-2 mb-8 text-gray-300">
+        <li className="flex gap-3">
+          <span className="text-emerald-400">✓</span>
+          <span>
+            <strong>Full control</strong> - Deploy to any VPS you own
+          </span>
+        </li>
+        <li className="flex gap-3">
+          <span className="text-emerald-400">✓</span>
+          <span>
+            <strong>Native Execution</strong> - Run Next.js bare-metal, no
+            overhead
+          </span>
+        </li>
+        <li className="flex gap-3">
+          <span className="text-emerald-400">✓</span>
+          <span>
+            <strong>Zero lock-in</strong> - No vendor dependencies
+          </span>
+        </li>
+        <li className="flex gap-3">
+          <span className="text-emerald-400">✓</span>
+          <span>
+            <strong>Serverless Ready</strong> - Deploy natively to AWS Lambda/S3
+          </span>
+        </li>
+        <li className="flex gap-3">
+          <span className="text-emerald-400">✓</span>
+          <span>
+            <strong>Cost-effective</strong> - Pay only for your VPS
+            ($5-20/month)
+          </span>
+        </li>
       </ul>
 
-      <hr className="border-slate-800 my-10" />
+      <h3 className="text-2xl font-bold text-white mt-12 mb-4">
+        Prerequisites
+      </h3>
+      <ul className="space-y-2 mb-8 text-gray-300">
+        <li className="flex gap-3">
+          <span className="text-emerald-400">•</span>
+          <span>
+            <strong>A Next.js project</strong> (any version)
+          </span>
+        </li>
+        <li className="flex gap-3">
+          <span className="text-emerald-400">•</span>
+          <span>
+            <strong>A Linux VPS</strong> (Ubuntu/Debian) or an{" "}
+            <strong>AWS Account</strong>
+          </span>
+        </li>
+        <li className="flex gap-3">
+          <span className="text-emerald-400">•</span>
+          <span>
+            <strong>SSH access</strong> to your server
+          </span>
+        </li>
+      </ul>
 
-      <h2 className="text-2xl font-bold text-white mt-12 mb-4">🛠 Advanced Features</h2>
-
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Zero-Downtime Hot Swaps (VPS)</h3>
-      <p className="text-gray-300 mb-6">
-        NextDeploy uses a release/symlink architecture. Every deployment is a new timestamped folder. The daemon dynamically spins up the new process on a vacant port, health-checks it, and instantly points Caddy to the new port before seamlessly draining the old process. You experience 0 seconds of 502 Bad Gateway errors.
+      <h3 className="text-2xl font-bold text-white mt-12 mb-4">Installation</h3>
+      <h4 className="text-xl font-semibold text-white mt-8 mb-3">
+        CLI (All Platforms)
+      </h4>
+      <p className="text-gray-300 mb-4">
+        Install the NextDeploy toolbelt using our global installer:
       </p>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Instant Rollbacks</h3>
-      <p className="text-gray-300 mb-4">Because old releases are kept on disk:</p>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-2 overflow-x-auto text-sm">
-        <code className="text-emerald-400">nextdeploy rollback</code>
-      </pre>
-      <p className="text-sm text-gray-400 italic mb-6">Instantly shifts the /current symlink to the previous release and reloads Caddy.</p>
+      <Tabs defaultValue="linux" className="w-full mb-8">
+        <TabsList className="bg-slate-900 border border-slate-700">
+          <TabsTrigger value="linux">Linux / macOS</TabsTrigger>
+          <TabsTrigger value="windows">Windows</TabsTrigger>
+          <TabsTrigger value="go">Go (Source)</TabsTrigger>
+        </TabsList>
+        <TabsContent value="linux" className="mt-2">
+          <CodeBlock code="curl -sSf https://nextdeploy.one/install.sh | sh" />
+        </TabsContent>
+        <TabsContent value="windows" className="mt-2">
+          <CodeBlock
+            code={`curl.exe -sSfO https://nextdeploy.one/install.bat && install.bat`}
+          />
+        </TabsContent>
+        <TabsContent value="go" className="mt-2">
+          <CodeBlock code="go install github.com/Golangcodes/nextdeploy/cli@latest" />
+        </TabsContent>
+      </Tabs>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Native Log Streaming</h3>
-      <pre className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-2 overflow-x-auto text-sm">
-        <code className="text-emerald-400">nextdeploy logs --route /api/webhook</code>
-      </pre>
-      <p className="text-sm text-gray-400 italic mb-8">Streams native systemd journal logs, with the ability to filter by specific Next.js request paths.</p>
+      <h4 className="text-xl font-semibold text-white mt-8 mb-3">
+        Daemon (Linux Servers Only)
+      </h4>
+      <p className="text-gray-300 mb-4">
+        On your VPS, set up the production engine.{" "}
+        <em>(Required for deployments)</em>
+      </p>
+
+      <Tabs defaultValue="script" className="w-full mb-8">
+        <TabsList className="bg-slate-900 border border-slate-700">
+          <TabsTrigger value="script">Install Script</TabsTrigger>
+          <TabsTrigger value="go">Go (Source)</TabsTrigger>
+        </TabsList>
+        <TabsContent value="script" className="mt-2">
+          <CodeBlock code="curl -sSf https://nextdeploy.one/daemon.sh | sh" />
+        </TabsContent>
+        <TabsContent value="go" className="mt-2">
+          <CodeBlock code="go install github.com/Golangcodes/nextdeploy/daemon/cmd/nextdeployd@main" />
+        </TabsContent>
+      </Tabs>
+
+      <hr className="border-slate-800 my-10" />
+
+      {/* --- Your First Deployment Section --- */}
+      <h2 className="text-3xl font-bold text-white mb-6">
+        Your First Deployment
+      </h2>
+
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+        1. Initialize Your Project
+      </h3>
+      <p className="text-gray-300 mb-4">
+        Navigate to your Next.js project and run:
+      </p>
+      <CodeBlock code="nextdeploy init" className="mb-8" />
+      <p className="text-gray-300 mb-8">
+        This scaffolds your project and generates a{" "}
+        <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">
+          nextdeploy.yml
+        </code>{" "}
+        config file.
+      </p>
+
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+        2. Configure Your Deployment
+      </h3>
+      <p className="text-gray-300 mb-4">
+        Edit{" "}
+        <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400">
+          nextdeploy.yml
+        </code>{" "}
+        for your target environment:
+      </p>
+
+      <p className="text-gray-300 mb-2 font-semibold">For Linux VPS:</p>
+      <CodeBlock
+        code={`version: 1.0\ntarget_type: "vps"\nservers:\n  - host: 192.168.1.100\n    ssh_key: "~/.ssh/id_rsa"`}
+        className="mb-8"
+      />
+
+      <p className="text-gray-300 mb-2 font-semibold">For AWS Serverless:</p>
+      <CodeBlock
+        code={`version: 1.0\ntarget_type: "serverless"\nserverless:\n  provider: "aws"\n  region: "us-east-1"\n  s3_bucket: "my-nextjs-assets"`}
+        className="mb-8"
+      />
+
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+        3. Server Preparation (VPS Only)
+      </h3>
+      <p className="text-gray-300 mb-4">
+        Automatically install dependencies and configure the background daemon.
+      </p>
+      <CodeBlock code="nextdeploy prepare" className="mb-8" />
+
+      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+        4. Deploy Manually
+      </h3>
+      <p className="text-gray-300 mb-4">
+        Point it to your server/target and run:
+      </p>
+      <CodeBlock
+        code={`nextdeploy build\nnextdeploy deploy`}
+        className="mb-8"
+      />
+      <p className="text-gray-300 mb-8">
+        The CLI analyzes your Route Plan and executes a Zero-Downtime port swap
+        (VPS) or S3 static synchronization (AWS).
+      </p>
+
+      <hr className="border-slate-800 my-10" />
+
+      {/* --- Architecture Section --- */}
+      <h2 className="text-3xl font-bold text-white mb-6">
+        Technical Architecture
+      </h2>
+      <p className="text-gray-300 text-lg mb-8">
+        NextDeploy is a beautifully coordinated dance between three core
+        components: the CLI, the Daemon, and the Caddy reverse proxy.
+      </p>
+
+      <div className="my-12 p-8 bg-slate-900/50 border border-slate-800 rounded-2xl flex flex-col items-center overflow-x-auto">
+        <h3 className="text-xl font-semibold mb-8 text-emerald-400">
+          System Overview
+        </h3>
+        <svg viewBox="0 0 800 400" className="w-full min-w-[600px] max-w-3xl">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop
+                offset="0%"
+                style={{ stopColor: "#10b981", stopOpacity: 0.2 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#059669", stopOpacity: 0.2 }}
+              />
+            </linearGradient>
+          </defs>
+
+          {/* Local Environment */}
+          <rect
+            x="50"
+            y="100"
+            width="200"
+            height="200"
+            rx="12"
+            fill="none"
+            stroke="#334155"
+            strokeWidth="2"
+            strokeDasharray="4 4"
+          />
+          <text
+            x="150"
+            y="80"
+            textAnchor="middle"
+            fill="#94a3b8"
+            fontSize="14"
+            fontWeight="600"
+          >
+            Local Environment
+          </text>
+
+          <rect
+            x="75"
+            y="150"
+            width="150"
+            height="80"
+            rx="8"
+            fill="#064e3b"
+            stroke="#10b981"
+            strokeWidth="2"
+          />
+          <text
+            x="150"
+            y="195"
+            textAnchor="middle"
+            fill="#ecfdf5"
+            fontSize="16"
+            fontWeight="600"
+          >
+            nextdeploy CLI
+          </text>
+
+          {/* Connection */}
+          <path
+            d="M 225 190 L 375 190"
+            stroke="#10b981"
+            strokeWidth="2"
+            markerEnd="url(#arrowhead)"
+          />
+          <text
+            x="300"
+            y="180"
+            textAnchor="middle"
+            fill="#10b981"
+            fontSize="12"
+            fontWeight="600"
+          >
+            SSH Tunnel (SFTP)
+          </text>
+
+          {/* Production VPS */}
+          <rect
+            x="375"
+            y="50"
+            width="375"
+            height="300"
+            rx="12"
+            fill="none"
+            stroke="#334155"
+            strokeWidth="2"
+            strokeDasharray="4 4"
+          />
+          <text
+            x="562"
+            y="30"
+            textAnchor="middle"
+            fill="#94a3b8"
+            fontSize="14"
+            fontWeight="600"
+          >
+            Production VPS
+          </text>
+
+          {/* Daemon */}
+          <rect
+            x="400"
+            y="150"
+            width="120"
+            height="80"
+            rx="8"
+            fill="#1e293b"
+            stroke="#3b82f6"
+            strokeWidth="2"
+          />
+          <text
+            x="460"
+            y="195"
+            textAnchor="middle"
+            fill="#f1f5f9"
+            fontSize="16"
+            fontWeight="600"
+          >
+            Daemon
+          </text>
+
+          {/* App */}
+          <rect
+            x="580"
+            y="240"
+            width="120"
+            height="80"
+            rx="8"
+            fill="#1e293b"
+            stroke="#f59e0b"
+            strokeWidth="2"
+          />
+          <text
+            x="640"
+            y="285"
+            textAnchor="middle"
+            fill="#f1f5f9"
+            fontSize="14"
+            fontWeight="600"
+          >
+            Next.js App
+          </text>
+
+          {/* Caddy */}
+          <rect
+            x="580"
+            y="70"
+            width="120"
+            height="80"
+            rx="8"
+            fill="#1e293b"
+            stroke="#8b5cf6"
+            strokeWidth="2"
+          />
+          <text
+            x="640"
+            y="115"
+            textAnchor="middle"
+            fill="#f1f5f9"
+            fontSize="16"
+            fontWeight="600"
+          >
+            Caddy Proxy
+          </text>
+
+          {/* Internal Flows */}
+          <path
+            d="M 460 230 L 460 280 L 580 280"
+            stroke="#94a3b8"
+            strokeWidth="2"
+            strokeDasharray="2 2"
+            markerEnd="url(#arrowhead-small)"
+          />
+          <text x="470" y="260" textAnchor="start" fill="#94a3b8" fontSize="10">
+            Manages
+          </text>
+
+          <path
+            d="M 460 150 L 460 110 L 580 110"
+            stroke="#94a3b8"
+            strokeWidth="2"
+            strokeDasharray="2 2"
+            markerEnd="url(#arrowhead-small)"
+          />
+          <text x="470" y="130" textAnchor="start" fill="#94a3b8" fontSize="10">
+            Configures
+          </text>
+
+          <path
+            d="M 640 150 L 640 240"
+            stroke="#8b5cf6"
+            strokeWidth="2"
+            markerEnd="url(#arrowhead-small)"
+          />
+          <text x="650" y="200" textAnchor="start" fill="#8b5cf6" fontSize="12">
+            Proxies HTTP
+          </text>
+
+          {/* Arrowheads */}
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="10"
+              markerHeight="7"
+              refX="0"
+              refY="3.5"
+              orientation="auto"
+            >
+              <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
+            </marker>
+            <marker
+              id="arrowhead-small"
+              markerWidth="6"
+              markerHeight="4"
+              refX="0"
+              refY="2"
+              orientation="auto"
+            >
+              <polygon points="0 0, 6 2, 0 4" fill="#94a3b8" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mt-12 mb-4">
+        The Lifecycle of a Deployment
+      </h3>
+      <div className="space-y-6 mb-12">
+        {[
+          {
+            icon: Terminal,
+            title: "Local Build",
+            desc: "The CLI runs your custom build command and collects the output.",
+          },
+          {
+            icon: Zap,
+            title: "Artifact Packaging",
+            desc: "A compressed tarball is created containing compiled server code, static assets, and metadata.",
+          },
+          {
+            icon: Share2,
+            title: "Transport",
+            desc: "The tarball is securely uploaded to the VPS over an encrypted SSH connection (SFTP).",
+          },
+          {
+            icon: Activity,
+            title: "Daemon Trigger",
+            desc: "The CLI communicates with the NextDeploy Daemon via a root-protected Unix socket.",
+          },
+          {
+            icon: Shield,
+            title: "Atomic Swap",
+            desc: "The Daemon unpacks the release, allocates a fresh port, and injects secrets.",
+          },
+          {
+            icon: Server,
+            title: "Health Check & Reload",
+            desc: "Once the app responds, the Daemon updates Caddy and reloads the proxy without dropping traffic.",
+          },
+        ].map((step, i) => (
+          <div
+            key={i}
+            className="flex gap-4 p-4 bg-slate-900/30 border border-slate-800 rounded-xl"
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+              <step.icon className="w-5 h-5 text-emerald-400" />
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-1">{step.title}</h4>
+              <p className="text-gray-400 text-sm">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mt-12 mb-4">
+        Component Responsibility
+      </h3>
+      <div className="grid md:grid-cols-2 gap-6 my-8">
+        <div className="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
+          <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <Terminal className="w-5 h-5 text-emerald-400" />
+            The CLI (Go)
+          </h3>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li>
+              • State management in{" "}
+              <code className="bg-black/40 px-1 rounded">.nextdeploy/</code>
+            </li>
+            <li>• Automatic project & package manager discovery</li>
+            <li>• Encrypted secret handling & SSH authentication</li>
+          </ul>
+        </div>
+
+        <div className="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
+          <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <Server className="w-5 h-5 text-blue-400" />
+            The Daemon (Go)
+          </h3>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li>• Root-isolated process supervision via systemd</li>
+            <li>• Unix socket server for secure local control</li>
+            <li>• Automated health monitoring & release pruning</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

@@ -18,21 +18,6 @@ repository:
   auto_deploy: true # Enable webhook-triggered CI/CD
   webhook_secret: your_webhook_secret # Used to verify webhook origin
 
-# ==================================================
-# CONTAINER BUILD & REGISTRY CONFIG
-# ==================================================
-docker:
-  build:
-    context: . # Usually root of repo
-    dockerfile: Dockerfile
-    args:
-      NODE_ENV: production
-    no_cache: false # Force rebuilds (good for CI, bad for caching)
-  image: aynaash/nextdeployfrontend
-  registry: docker.io
-  push: true
-  username: aynaash
-  password: dckr_pat_H8xP4EPpj4_zKddasew332323411314E3113K4gnInqXh010 #Replace with your Docker registry credentials
 
 # ==================================================
 # INFRASTRUCTURE / SERVER TARGETS

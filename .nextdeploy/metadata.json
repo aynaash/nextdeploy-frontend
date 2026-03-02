@@ -2,12 +2,12 @@
   "app_name": "nextdeploy",
   "next_version": "16.0.10",
   "nextbuildmetadata": {
-    "buildId": "crY_V2cwMFt-HNwvPkNsN",
+    "buildId": "V8p9cDseyeWKm615UnxPl",
     "buildManifest": {
       "devFiles": [],
       "lowPriorityFiles": [
-        "static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
-        "static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js"
+        "static/V8p9cDseyeWKm615UnxPl/_ssgManifest.js",
+        "static/V8p9cDseyeWKm615UnxPl/_buildManifest.js"
       ],
       "pages": {
         "/_app": []
@@ -16,12 +16,11 @@
         "static/chunks/a6dad97d9634a72d.js"
       ],
       "rootMainFiles": [
-        "static/chunks/8a78cbfae800a97c.js",
-        "static/chunks/8a80c7f2aa2a8276.js",
-        "static/chunks/041b3e0e3c954a8f.js",
-        "static/chunks/92e0473f5be0bb7a.js",
+        "static/chunks/e50dc293635f2d79.js",
+        "static/chunks/ded0446562467dfa.js",
         "static/chunks/7af99b4fe779898e.js",
-        "static/chunks/turbopack-4798b47f97ab07f6.js"
+        "static/chunks/92e0473f5be0bb7a.js",
+        "static/chunks/turbopack-c85d4fef5bc798b7.js"
       ]
     },
     "appBuildManifest": null,
@@ -55,7 +54,8 @@
               "value": "multipart/form-data;.*"
             }
           ],
-          "initialRevalidateSeconds": false,
+          "initialExpireSeconds": 31536000,
+          "initialRevalidateSeconds": 3600,
           "prefetchDataRoute": null,
           "srcRoute": "/"
         },
@@ -105,7 +105,8 @@
               "value": "multipart/form-data;.*"
             }
           ],
-          "initialRevalidateSeconds": false,
+          "initialExpireSeconds": 31536000,
+          "initialRevalidateSeconds": 3600,
           "initialStatus": 404,
           "prefetchDataRoute": null,
           "srcRoute": "/_not-found"
@@ -131,209 +132,10 @@
               "value": "multipart/form-data;.*"
             }
           ],
-          "initialRevalidateSeconds": false,
+          "initialExpireSeconds": 31536000,
+          "initialRevalidateSeconds": 3600,
           "prefetchDataRoute": null,
           "srcRoute": "/docs"
-        },
-        "/docs/cli-reference": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/cli-reference.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/cli-reference"
-        },
-        "/docs/configuration": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/configuration.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/configuration"
-        },
-        "/docs/first-deployment": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/first-deployment.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/first-deployment"
-        },
-        "/docs/getting-started": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/getting-started.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/getting-started"
-        },
-        "/docs/installation": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/installation.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/installation"
-        },
-        "/docs/secrets": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/secrets.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/secrets"
-        },
-        "/docs/troubleshooting": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/troubleshooting.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/troubleshooting"
-        },
-        "/docs/vs-kamal": {
-          "allowHeader": [
-            "host",
-            "x-matched-path",
-            "x-prerender-revalidate",
-            "x-prerender-revalidate-if-generated",
-            "x-next-revalidated-tags",
-            "x-next-revalidate-tag-token"
-          ],
-          "dataRoute": "/docs/vs-kamal.rsc",
-          "experimentalBypassFor": [
-            {
-              "key": "next-action",
-              "type": "header"
-            },
-            {
-              "key": "content-type",
-              "type": "header",
-              "value": "multipart/form-data;.*"
-            }
-          ],
-          "initialRevalidateSeconds": false,
-          "prefetchDataRoute": null,
-          "srcRoute": "/docs/vs-kamal"
         }
       },
       "version": 4
@@ -401,54 +203,6 @@
           "namedRegex": "^/docs(?:/)?$",
           "page": "/docs",
           "regex": "^/docs(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/cli\\-reference(?:/)?$",
-          "page": "/docs/cli-reference",
-          "regex": "^/docs/cli\\-reference(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/configuration(?:/)?$",
-          "page": "/docs/configuration",
-          "regex": "^/docs/configuration(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/first\\-deployment(?:/)?$",
-          "page": "/docs/first-deployment",
-          "regex": "^/docs/first\\-deployment(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/getting\\-started(?:/)?$",
-          "page": "/docs/getting-started",
-          "regex": "^/docs/getting\\-started(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/installation(?:/)?$",
-          "page": "/docs/installation",
-          "regex": "^/docs/installation(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/secrets(?:/)?$",
-          "page": "/docs/secrets",
-          "regex": "^/docs/secrets(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/troubleshooting(?:/)?$",
-          "page": "/docs/troubleshooting",
-          "regex": "^/docs/troubleshooting(?:/)?$",
-          "routeKeys": {}
-        },
-        {
-          "namedRegex": "^/docs/vs\\-kamal(?:/)?$",
-          "page": "/docs/vs-kamal",
-          "regex": "^/docs/vs\\-kamal(?:/)?$",
           "routeKeys": {}
         }
       ],
@@ -523,15 +277,7 @@
     "appPathRoutesManifest": {
       "/_global-error/page": "/_global-error",
       "/_not-found/page": "/_not-found",
-      "/docs/cli-reference/page": "/docs/cli-reference",
-      "/docs/configuration/page": "/docs/configuration",
-      "/docs/first-deployment/page": "/docs/first-deployment",
-      "/docs/getting-started/page": "/docs/getting-started",
-      "/docs/installation/page": "/docs/installation",
       "/docs/page": "/docs",
-      "/docs/secrets/page": "/docs/secrets",
-      "/docs/troubleshooting/page": "/docs/troubleshooting",
-      "/docs/vs-kamal/page": "/docs/vs-kamal",
       "/page": "/"
     },
     "reactLoadableManifest": null,
@@ -546,15 +292,7 @@
     "/",
     "/_global-error",
     "/_not-found",
-    "/docs",
-    "/docs/cli-reference",
-    "/docs/configuration",
-    "/docs/first-deployment",
-    "/docs/getting-started",
-    "/docs/installation",
-    "/docs/secrets",
-    "/docs/troubleshooting",
-    "/docs/vs-kamal"
+    "/docs"
   ],
   "dynamic_routes": null,
   "build_command": "bun run build",
@@ -574,6 +312,14 @@
         "size": 2626
       },
       {
+        "path": "public/daemon.sh",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/daemon.sh",
+        "public_path": "/daemon.sh",
+        "type": "other",
+        "extension": ".sh",
+        "size": 1648
+      },
+      {
         "path": "public/icon-dark-32x32.png",
         "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/icon-dark-32x32.png",
         "public_path": "/icon-dark-32x32.png",
@@ -588,6 +334,22 @@
         "type": "image",
         "extension": ".png",
         "size": 566
+      },
+      {
+        "path": "public/install.bat",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/install.bat",
+        "public_path": "/install.bat",
+        "type": "other",
+        "extension": ".bat",
+        "size": 2278
+      },
+      {
+        "path": "public/install.sh",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/public/install.sh",
+        "public_path": "/install.sh",
+        "type": "other",
+        "extension": ".sh",
+        "size": 1632
       },
       {
         "path": "public/logo.png",
@@ -641,12 +403,52 @@
     "static_folder": null,
     "next_static": [
       {
-        "path": ".next/static/chunks/041b3e0e3c954a8f.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/041b3e0e3c954a8f.js",
-        "public_path": "/_next/static/chunks/041b3e0e3c954a8f.js",
+        "path": ".next/static/V8p9cDseyeWKm615UnxPl/_buildManifest.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/V8p9cDseyeWKm615UnxPl/_buildManifest.js",
+        "public_path": "/_next/static/V8p9cDseyeWKm615UnxPl/_buildManifest.js",
         "type": "script",
         "extension": ".js",
-        "size": 51069
+        "size": 219
+      },
+      {
+        "path": ".next/static/V8p9cDseyeWKm615UnxPl/_clientMiddlewareManifest.json",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/V8p9cDseyeWKm615UnxPl/_clientMiddlewareManifest.json",
+        "public_path": "/_next/static/V8p9cDseyeWKm615UnxPl/_clientMiddlewareManifest.json",
+        "type": "document",
+        "extension": ".json",
+        "size": 2
+      },
+      {
+        "path": ".next/static/V8p9cDseyeWKm615UnxPl/_ssgManifest.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/V8p9cDseyeWKm615UnxPl/_ssgManifest.js",
+        "public_path": "/_next/static/V8p9cDseyeWKm615UnxPl/_ssgManifest.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 80
+      },
+      {
+        "path": ".next/static/chunks/28c7fb8e3bf98ab1.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/28c7fb8e3bf98ab1.js",
+        "public_path": "/_next/static/chunks/28c7fb8e3bf98ab1.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 40763
+      },
+      {
+        "path": ".next/static/chunks/2c7732dea7411363.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/2c7732dea7411363.js",
+        "public_path": "/_next/static/chunks/2c7732dea7411363.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 249
+      },
+      {
+        "path": ".next/static/chunks/305feb3c3d2416c7.css",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/305feb3c3d2416c7.css",
+        "public_path": "/_next/static/chunks/305feb3c3d2416c7.css",
+        "type": "stylesheet",
+        "extension": ".css",
+        "size": 133480
       },
       {
         "path": ".next/static/chunks/3337476739009024.js",
@@ -655,6 +457,22 @@
         "type": "script",
         "extension": ".js",
         "size": 281
+      },
+      {
+        "path": ".next/static/chunks/3adebbec96837502.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/3adebbec96837502.js",
+        "public_path": "/_next/static/chunks/3adebbec96837502.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 1699
+      },
+      {
+        "path": ".next/static/chunks/6fa795356438ebd5.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/6fa795356438ebd5.js",
+        "public_path": "/_next/static/chunks/6fa795356438ebd5.js",
+        "type": "script",
+        "extension": ".js",
+        "size": 15919
       },
       {
         "path": ".next/static/chunks/796e7f5bb07ad38d.js",
@@ -673,28 +491,12 @@
         "size": 85404
       },
       {
-        "path": ".next/static/chunks/7e0ac25b66b02481.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/7e0ac25b66b02481.js",
-        "public_path": "/_next/static/chunks/7e0ac25b66b02481.js",
+        "path": ".next/static/chunks/7dfa1b30aa151e71.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/7dfa1b30aa151e71.js",
+        "public_path": "/_next/static/chunks/7dfa1b30aa151e71.js",
         "type": "script",
         "extension": ".js",
-        "size": 24228
-      },
-      {
-        "path": ".next/static/chunks/8a78cbfae800a97c.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/8a78cbfae800a97c.js",
-        "public_path": "/_next/static/chunks/8a78cbfae800a97c.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 13374
-      },
-      {
-        "path": ".next/static/chunks/8a80c7f2aa2a8276.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/8a80c7f2aa2a8276.js",
-        "public_path": "/_next/static/chunks/8a80c7f2aa2a8276.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 39966
+        "size": 5897
       },
       {
         "path": ".next/static/chunks/8a80e7184ad3a13f.css",
@@ -729,68 +531,28 @@
         "size": 10619
       },
       {
-        "path": ".next/static/chunks/be6e1070f5dc5517.css",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/be6e1070f5dc5517.css",
-        "public_path": "/_next/static/chunks/be6e1070f5dc5517.css",
-        "type": "stylesheet",
-        "extension": ".css",
-        "size": 133201
-      },
-      {
-        "path": ".next/static/chunks/c3f31ae7688b1ab0.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/c3f31ae7688b1ab0.js",
-        "public_path": "/_next/static/chunks/c3f31ae7688b1ab0.js",
+        "path": ".next/static/chunks/ded0446562467dfa.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/ded0446562467dfa.js",
+        "public_path": "/_next/static/chunks/ded0446562467dfa.js",
         "type": "script",
         "extension": ".js",
-        "size": 2537
+        "size": 87368
       },
       {
-        "path": ".next/static/chunks/cdea7944cb5920d7.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/cdea7944cb5920d7.js",
-        "public_path": "/_next/static/chunks/cdea7944cb5920d7.js",
+        "path": ".next/static/chunks/e50dc293635f2d79.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/e50dc293635f2d79.js",
+        "public_path": "/_next/static/chunks/e50dc293635f2d79.js",
         "type": "script",
         "extension": ".js",
-        "size": 2704
+        "size": 16927
       },
       {
-        "path": ".next/static/chunks/facd9eb78646c677.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/facd9eb78646c677.js",
-        "public_path": "/_next/static/chunks/facd9eb78646c677.js",
+        "path": ".next/static/chunks/turbopack-c85d4fef5bc798b7.js",
+        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/turbopack-c85d4fef5bc798b7.js",
+        "public_path": "/_next/static/chunks/turbopack-c85d4fef5bc798b7.js",
         "type": "script",
         "extension": ".js",
-        "size": 15496
-      },
-      {
-        "path": ".next/static/chunks/turbopack-4798b47f97ab07f6.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/chunks/turbopack-4798b47f97ab07f6.js",
-        "public_path": "/_next/static/chunks/turbopack-4798b47f97ab07f6.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 9945
-      },
-      {
-        "path": ".next/static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js",
-        "public_path": "/_next/static/crY_V2cwMFt-HNwvPkNsN/_buildManifest.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 219
-      },
-      {
-        "path": ".next/static/crY_V2cwMFt-HNwvPkNsN/_clientMiddlewareManifest.json",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/crY_V2cwMFt-HNwvPkNsN/_clientMiddlewareManifest.json",
-        "public_path": "/_next/static/crY_V2cwMFt-HNwvPkNsN/_clientMiddlewareManifest.json",
-        "type": "document",
-        "extension": ".json",
-        "size": 2
-      },
-      {
-        "path": ".next/static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
-        "absolute_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.next/static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
-        "public_path": "/_next/static/crY_V2cwMFt-HNwvPkNsN/_ssgManifest.js",
-        "type": "script",
-        "extension": ".js",
-        "size": 80
+        "size": 9909
       },
       {
         "path": ".next/static/media/4fa387ec64143e14-s.c1fdd6c2.woff2",
@@ -843,9 +605,9 @@
     ],
     "other_assets": null
   },
-  "git_commit": "f8b19a3",
+  "git_commit": "207b440",
   "git_dirty": true,
-  "generated_at": "2026-03-01T04:53:12+03:00",
+  "generated_at": "2026-03-02T04:04:53+03:00",
   "build_lock_file": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/build.lock",
   "metadata_file_path": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/metadata.json",
   "assets_output_dir": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/.nextdeploy/assets",
@@ -938,20 +700,16 @@
       "/",
       "/_global-error",
       "/_not-found",
-      "/docs",
-      "/docs/cli-reference",
-      "/docs/configuration",
-      "/docs/first-deployment",
-      "/docs/getting-started",
-      "/docs/installation",
-      "/docs/secrets",
-      "/docs/troubleshooting",
-      "/docs/vs-kamal"
+      "/docs"
     ],
     "dynamic_routes": null,
     "ssg_routes": {},
     "ssr_routes": null,
-    "isr_routes": {},
+    "isr_routes": {
+      "/": ".next/server/index.rsc",
+      "/_not-found": ".next/server/_not-found.rsc",
+      "/docs": ".next/server/docs.rsc"
+    },
     "api_routes": null,
     "fallback_routes": {},
     "middleware_routes": null
@@ -963,7 +721,7 @@
       "app_build_manifest": "",
       "react_loadable_manifest": "",
       "package_json": "/home/hersi/Music/workspace/nextdeploy/nextdeploy-frontend/package.json",
-      "last_build_timestamp": "2026-03-01T04:53:12+03:00"
+      "last_build_timestamp": "2026-03-02T04:04:53+03:00"
     },
     "cache": {
       "images": null,
@@ -1009,7 +767,7 @@
     "build_metadata": {
       "next_version": "16.0.10",
       "build_target": "",
-      "build_id": "crY_V2cwMFt-HNwvPkNsN",
+      "build_id": "V8p9cDseyeWKm615UnxPl",
       "has_typescript": false,
       "has_eslint": false,
       "output_mode": "standalone"

@@ -1,5 +1,4 @@
 import React from "react"
-import DocsSidebar from '@/components/docs-sidebar'
 import DocsFooter from '@/components/docs-footer'
 
 export const metadata = {
@@ -13,13 +12,10 @@ export default function DocsLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex min-h-screen bg-slate-950">
-      <DocsSidebar />
-      <main className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto p-8 relative">
-          {children}
-          <DocsFooter />
-        </div>
+    <div className="min-h-screen bg-slate-950 flex flex-col">
+      <main className="flex-1 py-12 px-6 sm:px-12 md:px-24 max-w-5xl mx-auto w-full relative">
+        {children}
+        <DocsFooter />
       </main>
     </div>
   )
