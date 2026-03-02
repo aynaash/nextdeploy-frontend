@@ -1,8 +1,6 @@
-'use client'
-
-import Link from 'next/link'
-import { Suspense } from 'react'
-import GitHubStarButton from './github-star-button'
+import Link from "next/link";
+import { Suspense } from "react";
+import GitHubStarButton from "./github-star-button";
 
 export default function Navbar() {
   return (
@@ -13,21 +11,35 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center font-bold text-slate-950 transform group-hover:rotate-12 transition-transform">
               N
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">NextDeploy</span>
+            <span className="text-xl font-bold text-white tracking-tight">
+              NextDeploy
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/docs" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <Link
+              href="/docs"
+              className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            >
               Documentation
             </Link>
-            <a href="https://github.com/Golangcodes/nextdeploy" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://github.com/Golangcodes/nextdeploy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            >
               GitHub
             </a>
           </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <Suspense fallback={<div className="w-32 h-9 bg-slate-800 rounded-lg animate-pulse" />}>
+          <Suspense
+            fallback={
+              <div className="w-32 h-9 bg-slate-800 rounded-lg animate-pulse" />
+            }
+          >
             <GitHubStarButton />
           </Suspense>
 
@@ -40,5 +52,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Zap, Terminal, Server, Shield, Activity, Share2 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { CodeBlock } from "@/components/copy-button";
@@ -211,10 +210,7 @@ export default function DocsIndex() {
       <p className="text-gray-300 mb-4">
         Point it to your server/target and run:
       </p>
-      <CodeBlock
-        code={`nextdeploy build\nnextdeploy deploy`}
-        className="mb-8"
-      />
+      <CodeBlock code={`nextdeploy build\nnextdeploy ship`} className="mb-8" />
       <p className="text-gray-300 mb-8">
         The CLI analyzes your Route Plan and executes a Zero-Downtime port swap
         (VPS) or S3 static synchronization (AWS).
@@ -227,8 +223,8 @@ export default function DocsIndex() {
         Technical Architecture
       </h2>
       <p className="text-gray-300 text-lg mb-8">
-        NextDeploy is a beautifully coordinated dance between three core
-        components: the CLI, the Daemon, and the Caddy reverse proxy.
+        NextDeploy is coordinated between three core components: the CLI, the
+        Daemon, and the Caddy reverse proxy.
       </p>
 
       <div className="my-12 p-8 bg-slate-900/50 border border-slate-800 rounded-2xl flex flex-col items-center overflow-x-auto">
