@@ -14,7 +14,7 @@ export default function DocsIndex() {
       </div>
 
       <p className="text-gray-300 text-lg mb-8">
-        Welcome to NextDeploy!! This guide will help you understand the platform,
+        Welcome to NextDeploy! This guide will help you understand the platform,
         install the necessary tools, and deploy your first Next.js application
         in minutes.
       </p>
