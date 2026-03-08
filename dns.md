@@ -1,45 +1,105 @@
-#  NextDeploy DNS Setup Guide (Serverless)
+# 🌐 NextDeploy DNS Setup Guide
 
 Target Domain: **nextdeploy.one**
-Generated: `Thu, 05 Mar 2026 08:16:26 EAT`
+Deployment Type: **VPS (Direct Server)**
+Generated: `2026-03-08 07:50:58 EAT`
+
+Server IP: **production-01**
 
 > [!IMPORTANT]
-> You need to add **TWO** sets of DNS records to your registrar to go live.
-> Need help? Check the [Full Documentation](https://nextdeploy.one/docs)
+> This guide contains **exact** values for your domain. Copy them precisely.
+> DNS changes can take 5-60 minutes to propagate worldwide.
+> 📚 [Full Documentation](https://nextdeploy.one/docs)
 
-Log into your domain registrar (e.g., Namecheap, GoDaddy, Cloudflare) and navigate to the **DNS Management** or **Advanced DNS** settings for `nextdeploy.one`.
+### ⏱️ DNS Propagation Timeline
 
-## Step 1: Point your domain at CloudFront
+| DNS Server | Typical Time |
+| :--- | :--- |
+| Namecheap/Provider | ⚡ Instant (once saved) |
+| Google (8.8.8.8) | 5-30 minutes |
+| Cloudflare (1.1.1.1) | 5-30 minutes |
+| Worldwide | 24-48 hours max |
 
-⚠️ **CloudFront Domain: [Pending]**
-Run `nextdeploy ship` again after SSL validation (Step 2) to get this value.
+## 📍 Step 1: Root Domain A Record
 
-## Step 2: SSL Certificate Validation (AWS ACM)
+Points your main domain directly to your server.
 
-AWS needs to verify you own this domain before issuing the SSL certificate.
+| Field | Value |
+| :--- | :--- |
+| **Type** | `A Record` |
+| **Host/Name** | `@` |
+| **Value/IP** | `production-01` |
+| **TTL** | `Automatic` |
 
-### Validation Record 1
-1. Click **Add New Record**.
-2. Select **CNAME Record** as the type.
-3. For **Host** (or Name), copy exactly: `_5f2eb772e3877df83fae3182c9e00665.nextdeploy.one.`
-4. For **Value** (or Target), copy exactly: `_9a11848523ccbd75913d4e3ffb43c959.jkddzztszm.acm-validations.aws.`
-5. Save the record.
 
-### Validation Record 2
-1. Click **Add New Record**.
-2. Select **CNAME Record** as the type.
-3. For **Host** (or Name), copy exactly: `_5ab8c33b39a34cd316fbac301cc758bf.www.nextdeploy.one.`
-4. For **Value** (or Target), copy exactly: `_35cfebb04ef56b961624fbbff26e28d6.jkddzztszm.acm-validations.aws.`
-5. Save the record.
+## 🔄 Step 2: WWW Subdomain
 
-> [!WARNING]
-> **NAMECHEAP & GODADDY USERS**: Your registrar automatically adds your domain to the Host field.
-> **DO NOT** include `nextdeploy.one` in the Name/Host field or it will fail.
-> 
-> ✅ **Correct Host**: `_5f2eb7...` or `@` 
-> ❌ **Wrong Host**: `_5f2eb7....nextdeploy.one`
+Ensures `www.nextdeploy.one` works properly.
+
+| Field | Value |
+| :--- | :--- |
+| **Type** | `CNAME` |
+| **Host/Name** | `www` |
+| **Value/Target** | `nextdeploy.one` |
+| **TTL** | `Automatic` (or 5-30 minutes) |
+
+
+## 📋 Provider-Specific Instructions
+
+### Namecheap
+
+| Do | Don't |
+| :--- | :--- |
+| ✅ Use `@` for root domain | ❌ Never include `.nextdeploy.one` in Host field |
+| ✅ For www SSL: `_hash.www` in Host | ❌ Don't add trailing dots |
+| ✅ Copy values exactly as shown | ❌ Don't add extra spaces |
+
+### Cloudflare
+
+⚠️ **Critical**: For SSL validation records, ensure the cloud icon is **gray** (DNS only)
+
+| Record Type | Proxy Status |
+| :--- | :--- |
+| SSL Validation Records | ⚪ Gray cloud (DNS only) |
+| Root/WWW (after SSL) | 🟠 Orange cloud (proxied) optional |
+
+### GoDaddy
+
+- Use **@** for root domain
+- Points to field should NOT have trailing dot
+- TTL can be left as 1 hour
+
+## ⚠️ Common Pitfalls to Avoid
+
+| ❌ Wrong | ✅ Correct | Why |
+| :--- | :--- | :--- |
+| `_5f2eb7...nextdeploy.one` | `_5f2eb7...` | Host field should NOT include your domain name |
+| `_hash.www.nextdeploy.one` | `_hash.www` | For www SSL records, stop at '.www' |
+| `value.acm-validations.aws.` | `value.acm-validations.aws` | Most providers don't want trailing dots in the Value field |
+| `Waiting 2 minutes and giving up` | `Waiting 30+ minutes for propagation` | DNS propagation takes time - be patient! |
+
+## 🔍 How to Verify Records
+
+After adding records, verify they're working:
+
+```bash
+# Check root domain
+dig nextdeploy.one CNAME +short
+
+# Check SSL validation records
+dig _5f2eb7...nextdeploy.one CNAME +short
+dig @8.8.8.8 _hash.www.nextdeploy.one CNAME +short  # Use Google DNS
+
+# Watch for propagation
+watch -n 60 'dig @8.8.8.8 _hash.www.nextdeploy.one CNAME +short'
+```
+
+**Expected output**: You should see the target value (CloudFront domain or validation string)
 
 ## 🚀 Final Steps
-1. Ensure all records from above are saved in your DNS panel.
-2. Wait 2-5 minutes for the DNS changes to propagate globally.
-3. Run `nextdeploy ship` in your terminal again to finish the deployment.
+
+1. ✅ Save both records in your DNS panel
+2. ⏱️ Wait 5-10 minutes for propagation
+3. 🔒 SSL will be automatically provisioned by Caddy on first visit
+4. 🌐 Visit https://nextdeploy.one to test
+

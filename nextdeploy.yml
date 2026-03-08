@@ -26,7 +26,7 @@ app:
 # -----
 servers:
   - name: "production-01" # [REQUIRED] Friendly name for the server
-    host: 3.92.56.22 # [REQUIRED] IP or hostname of the server
+    host: 98.91.211.34 # [REQUIRED] IP or hostname of the server
     username: ubuntu # [REQUIRED] SSH user (e.g., ubuntu, debian, root)
     key_path: ~/.ssh/nextjs-key.pem # [REQUIRED] Path to your private SSH key
     # password: "" # Optional: SSH password (key_path takes precedence)
