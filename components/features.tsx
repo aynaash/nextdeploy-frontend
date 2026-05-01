@@ -27,13 +27,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-950 to-slate-900">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-3">
+    <section className="py-16 sm:py-24 bg-gradient-to-b from-slate-950 to-slate-900">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             Why NextDeploy?
           </h2>
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-sm sm:text-base">
             Built for developers who want full control without the complexity.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Features() {
           ))}
         </div>
 
-        <div className="mt-12 text-center flex flex-wrap gap-4 justify-center">
+        <div className="mt-10 sm:mt-12 text-center flex flex-wrap gap-3 sm:gap-4 justify-center">
           <a
             href="/docs"
             className="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all"
@@ -67,7 +67,7 @@ export default function Features() {
             Read the Docs →
           </a>
           <a
-            href="https://github.com/Golangcodes/nextdeploy"
+            href="https://github.com/aynaash/NextDeploy"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all"

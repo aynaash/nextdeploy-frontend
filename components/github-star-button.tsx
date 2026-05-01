@@ -2,7 +2,7 @@ import { Github, Star } from 'lucide-react'
 
 async function getStarCount(): Promise<number | null> {
     try {
-        const res = await fetch('https://api.github.com/repos/Golangcodes/nextdeploy', {
+        const res = await fetch('https://api.github.com/repos/aynaash/NextDeploy', {
             next: { revalidate: 3600 }, // cache for 1 hour
         })
         if (!res.ok) return null
@@ -18,7 +18,7 @@ export default async function GitHubStarButton() {
 
     return (
         <a
-            href="https://github.com/Golangcodes/nextdeploy"
+            href="https://github.com/aynaash/NextDeploy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-white text-sm font-medium transition-all duration-200 group"

@@ -31,7 +31,7 @@ There are multiple ways to install NextDeploy:
 
 ### 1. Download Pre-compiled Binaries (Recommended)
 
-You can download the pre-compiled binaries for Windows, macOS, and Linux from the [GitHub Releases](https://github.com/Golangcodes/nextdeploy/releases) page.
+You can download the pre-compiled binaries for Windows, macOS, and Linux from the [GitHub Releases](https://github.com/aynaash/NextDeploy/releases) page.
 Simply download the appropriate binary for your system architecture, extract it, and place it in your PATH.
 
 ### 2. For Go Developers
@@ -40,22 +40,22 @@ If you have Go installed on your system, you can easily install the CLI directly
 
 **Install CLI (Windows, macOS, Linux):**
 ```bash
-go install github.com/Golangcodes/nextdeploy/cli@latest
+go install github.com/aynaash/NextDeploy/cli@latest
 ```
 
 **Install Daemon (Linux only):**
 ```bash
-go install github.com/Golangcodes/nextdeploy/daemon/cmd/nextdeployd@latest
+go install github.com/aynaash/NextDeploy/daemon/cmd/nextdeployd@latest
 ```
 ```
-curl -fsSL https://nextdeploy.one/daemon.sh | bash
+curl -fsSL https://nextdeploy.org/daemon.sh | bash
 ```
 ### 3. Bash Install Script (Linux Servers)
 
 For a quick setup on a Linux server, you can use our installation script to fetch the latest daemon and CLI securely:
 
 ```bash
-curl -fsSL https://nextdeploy.one/install.sh | bash
+curl -fsSL https://nextdeploy.org/install.sh | bash
 ```
 
 ---
@@ -107,8 +107,8 @@ Other platforms abstract until you lose control. NextDeploy flips that. You own 
 
 ## Links
 
-* Website: [nextdeploy.one](https://nextdeploy.one)
-* GitHub: [github.com/Golangcodes/nextdeploy](https://github.com/Golangcodes/nextdeploy)
+* Website: [nextdeploy.org](https://nextdeploy.org)
+* GitHub: [github.com/aynaash/NextDeploy](https://github.com/aynaash/NextDeploy)
 * Twitter/X: [@hersiyussuf](https://x.com/hersiyussuf)
 
 ---

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import GitHubStarButton from "./github-star-button";
+import MobileNav from "./mobile-nav";
 
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center font-bold text-slate-950 transform group-hover:rotate-12 transition-transform">
@@ -24,7 +25,7 @@ export default function Navbar() {
               Documentation
             </Link>
             <a
-              href="https://github.com/Golangcodes/nextdeploy"
+              href="https://github.com/aynaash/NextDeploy"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
@@ -34,14 +35,16 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <Suspense
-            fallback={
-              <div className="w-32 h-9 bg-slate-800 rounded-lg animate-pulse" />
-            }
-          >
-            <GitHubStarButton />
-          </Suspense>
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="hidden sm:block">
+            <Suspense
+              fallback={
+                <div className="w-32 h-9 bg-slate-800 rounded-lg animate-pulse" />
+              }
+            >
+              <GitHubStarButton />
+            </Suspense>
+          </div>
 
           <Link
             href="/docs"
@@ -49,6 +52,8 @@ export default function Navbar() {
           >
             Get Started
           </Link>
+
+          <MobileNav />
         </div>
       </div>
     </nav>

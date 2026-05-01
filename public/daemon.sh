@@ -12,7 +12,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-REPO="Golangcodes/nextdeploy"
+REPO="aynaash/NextDeploy"
 BIN_NAME="nextdeployd"
 INSTALL_DIR="/usr/local/bin"
 DOWNLOAD_DIR="/tmp/nextdeployd-install"

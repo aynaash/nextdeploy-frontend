@@ -22,21 +22,21 @@ const installOptions = [
     id: "cli-unix",
     name: "Mac/Linux CLI",
     icon: Terminal,
-    cmd: "curl -sSf https://nextdeploy.one/install.sh | sh",
+    cmd: "curl -sSf https://nextdeploy.org/install.sh | sh",
     desc: "Install CLI tool for developers",
   },
   {
     id: "cli-win",
     name: "Windows CLI",
     icon: Monitor,
-    cmd: "curl -sSf https://nextdeploy.one/install.bat | sh",
+    cmd: "curl.exe -sSfO https://nextdeploy.org/install.bat && install.bat",
     desc: "Install CLI tool on Windows",
   },
   {
     id: "daemon",
     name: "Ubuntu Server",
     icon: Server,
-    cmd: "curl -sSf https://nextdeploy.one/daemon.sh | sh",
+    cmd: "curl -sSf https://nextdeploy.org/daemon.sh | sh",
     desc: "Install NextDeploy Daemon: this daemon is auto-installed on the server it is the control plane",
   },
 ];
@@ -52,19 +52,19 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 min-h-[calc(100vh-4rem)] lg:min-h-screen">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_50%)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        {/* Main headline - slightly smaller to accommodate larger video */}
-        <h1 className="text-3xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-emerald-100 via-green-200 to-emerald-100 bg-clip-text text-transparent leading-tight text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+        {/* Main headline */}
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-emerald-100 via-green-200 to-emerald-100 bg-clip-text text-transparent leading-tight text-center">
           Next.js Deployment
           <br />
           Without the Black Box
         </h1>
 
-        {/* Tagline - more compact */}
+        {/* Tagline */}
         <p className="text-sm md:text-base text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed text-center">
           The high-performance, developer-first deployment engine. Transform any
           VPS into a premium hosting platform with
@@ -103,7 +103,7 @@ export default function Hero() {
                   <button
                     key={option.id}
                     onClick={() => setActiveTab(option)}
-                    className={`flex items-center gap-2 px-5 py-3 text-xs font-medium transition-colors border-b-2 whitespace-nowrap ${isActive
+                    className={`flex items-center gap-2 px-3 sm:px-5 py-2.5 sm:py-3 text-xs font-medium transition-colors border-b-2 whitespace-nowrap ${isActive
                       ? "text-emerald-400 border-emerald-500 bg-slate-800/50"
                       : "text-gray-400 border-transparent hover:text-gray-200 hover:bg-slate-800/30"
                       }`}
@@ -116,7 +116,7 @@ export default function Hero() {
             </div>
 
             {/* Terminal header */}
-            <div className="flex items-center justify-between px-5 py-3 bg-slate-800/40 border-b border-slate-700/50">
+            <div className="flex items-center justify-between px-4 sm:px-5 py-3 bg-slate-800/40 border-b border-slate-700/50">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-red-500/60" />
                 <div className="w-2 h-2 rounded-full bg-yellow-500/60" />
@@ -139,7 +139,7 @@ export default function Hero() {
             </div>
 
             {/* Code Execution Block */}
-            <div className="p-6 md:p-8 font-mono text-xs sm:text-sm">
+            <div className="p-4 sm:p-6 md:p-8 font-mono text-xs sm:text-sm">
               <div className="flex flex-col gap-3 group">
                 <div className="flex items-start gap-3">
                   <span className="text-gray-600 select-none flex-shrink-0 mt-0.5">
@@ -160,9 +160,9 @@ export default function Hero() {
         </div>
 
         {/* YouTube Tutorial Section */}
-        <div className="mt-20 max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+        <div className="mt-12 sm:mt-20 max-w-4xl mx-auto text-center">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-white">
               Watch the Tutorial
             </h2>
             <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">

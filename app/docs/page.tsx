@@ -14,6 +14,7 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { CodeBlock } from "@/components/copy-button";
 import GitHubStarButton from "@/components/github-star-button";
+import DocPrevNext from "@/components/doc-prev-next";
 
 function VideoPlaceholder({
   title,
@@ -55,16 +56,16 @@ function YouTubeEmbed({ id, title }: { id: string; title: string }) {
 
 export default function DocsIndex() {
   return (
-    <div className="py-12 prose prose-invert max-w-none">
+    <div className="py-6 sm:py-12 prose prose-invert max-w-none">
       {/* ─── HEADER ─── */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-        <h1 className="text-4xl font-bold text-white m-0">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white m-0">
           NextDeploy Documentation
         </h1>
         <GitHubStarButton />
       </div>
 
-      <p className="text-gray-300 text-lg mb-4">
+      <p className="text-gray-300 text-base sm:text-lg mb-4">
         NextDeploy is a self-hosted deployment engine for Next.js. It builds a
         complete picture of your app at build time — routes, integrations,
         secrets, assets — and uses that intelligence to deploy correctly to your
@@ -91,10 +92,10 @@ export default function DocsIndex() {
         </div>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── HOW IT ACTUALLY WORKS ─── */}
-      <h2 className="text-3xl font-bold text-white mb-4">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
         How it actually works
       </h2>
       <p className="text-gray-300 mb-6">
@@ -182,10 +183,10 @@ export default function DocsIndex() {
         </p>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── WHAT IT HANDLES TODAY ─── */}
-      <h2 className="text-3xl font-bold text-white mb-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
         What it handles today
       </h2>
       <div className="grid md:grid-cols-2 gap-4 mb-8 text-gray-300">
@@ -298,12 +299,12 @@ export default function DocsIndex() {
         </ul>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── INSTALLATION ─── */}
-      <h2 className="text-3xl font-bold text-white mb-6">Installation</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Installation</h2>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         CLI (your machine)
       </h3>
       <p className="text-gray-300 mb-4">
@@ -316,19 +317,19 @@ export default function DocsIndex() {
           <TabsTrigger value="go">Go (Source)</TabsTrigger>
         </TabsList>
         <TabsContent value="linux" className="mt-2">
-          <CodeBlock code="curl -sSf https://nextdeploy.one/install.sh | sh" />
+          <CodeBlock code="curl -sSf https://nextdeploy.org/install.sh | sh" />
         </TabsContent>
         <TabsContent value="windows" className="mt-2">
           <CodeBlock
-            code={`curl.exe -sSfO https://nextdeploy.one/install.bat && install.bat`}
+            code={`curl.exe -sSfO https://nextdeploy.org/install.bat && install.bat`}
           />
         </TabsContent>
         <TabsContent value="go" className="mt-2">
-          <CodeBlock code="go install github.com/Golangcodes/nextdeploy/cli@latest" />
+          <CodeBlock code="go install github.com/aynaash/NextDeploy/cli@latest" />
         </TabsContent>
       </Tabs>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         Daemon (VPS only)
       </h3>
       <p className="text-gray-300 mb-4">
@@ -342,22 +343,22 @@ export default function DocsIndex() {
           <TabsTrigger value="go">Go (Source)</TabsTrigger>
         </TabsList>
         <TabsContent value="script" className="mt-2">
-          <CodeBlock code="curl -sSf https://nextdeploy.one/daemon.sh | sh" />
+          <CodeBlock code="curl -sSf https://nextdeploy.org/daemon.sh | sh" />
         </TabsContent>
         <TabsContent value="go" className="mt-2">
-          <CodeBlock code="go install github.com/Golangcodes/nextdeploy/daemon/cmd/nextdeployd@main" />
+          <CodeBlock code="go install github.com/aynaash/NextDeploy/daemon/cmd/nextdeployd@main" />
         </TabsContent>
       </Tabs>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── VPS DEPLOYMENT ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">VPS Deployment</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">VPS Deployment</h2>
       <p className="text-gray-400 mb-6 text-sm">
         Deploy to any Linux server you own or rent.
       </p>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         1. Initialize
       </h3>
       <CodeBlock code="nextdeploy init" className="mb-4" />
@@ -369,7 +370,7 @@ export default function DocsIndex() {
         in your project root with sensible defaults.
       </p>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         2. Configure
       </h3>
       <CodeBlock
@@ -396,7 +397,7 @@ servers:
         title="NextDeploy VPS Tutorial: Zero-Downtime Deployment"
       />
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         3. Prepare the server (once)
       </h3>
       <p className="text-gray-300 mb-4">
@@ -408,32 +409,45 @@ servers:
       </p>
       <CodeBlock code="nextdeploy prepare" className="mb-8" />
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
-        4. Build and deploy
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
+        4. Deploy
       </h3>
-      <CodeBlock code={`nextdeploy build\nnextdeploy ship`} className="mb-4" />
-      <p className="text-gray-300 mb-8">
-        <code className="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded">
-          build
-        </code>{" "}
-        analyses your Next.js output and produces the metadata and artifact.{" "}
+      <CodeBlock code="nextdeploy ship" className="mb-4" />
+      <p className="text-gray-300 mb-4">
         <code className="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded">
           ship
         </code>{" "}
-        uploads via SFTP and signals the daemon for an atomic port-swap — health
-        checked before traffic cuts over.
+        runs the full pipeline in one step — analyses your Next.js output,
+        produces the metadata and artifact, uploads via SFTP, and signals the
+        daemon for an atomic port-swap that's health checked before traffic cuts
+        over. Incremental: skips the rebuild step when nothing has changed.
+      </p>
+      <p className="text-gray-400 text-sm mb-8">
+        For CI pipelines that want a separate build stage, run{" "}
+        <code className="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded">
+          nextdeploy build
+        </code>{" "}
+        first — it produces the same artifact{" "}
+        <code className="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded">
+          ship
+        </code>{" "}
+        would have built. Add{" "}
+        <code className="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded">
+          --force
+        </code>{" "}
+        to either command to bypass the incremental cache.
       </p>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">Rollback</h3>
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">Rollback</h3>
       <p className="text-gray-300 mb-4">
         The daemon keeps your last 5 releases. Revert instantly:
       </p>
       <CodeBlock code="nextdeploy rollback" className="mb-8" />
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── SERVERLESS DEPLOYMENT ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
         Serverless Deployment (AWS)
       </h2>
       <p className="text-gray-400 mb-6 text-sm">
@@ -471,7 +485,7 @@ servers:
         </div>
       </div>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         1. Configure
       </h3>
       <CodeBlock
@@ -493,7 +507,7 @@ serverless:
         badge="Coming Soon"
       />
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
         2. Add <code className="text-emerald-400">output: 'standalone'</code>
       </h3>
       <CodeBlock
@@ -516,16 +530,16 @@ export default nextConfig`}
         </p>
       </div>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-3">
-        3. Build and deploy
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-3">
+        3. Deploy
       </h3>
-      <CodeBlock code={`nextdeploy build\nnextdeploy ship`} className="mb-4" />
+      <CodeBlock code="nextdeploy ship" className="mb-4" />
       <p className="text-gray-300 mb-6">
-        What{" "}
+        One command runs the full pipeline.{" "}
         <code className="bg-slate-900 px-2 py-1 rounded text-emerald-400 font-mono">
           ship
         </code>{" "}
-        does:
+        builds your app (only when something changed), then:
       </p>
 
       <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -576,10 +590,10 @@ export default nextConfig`}
         ))}
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── SECRETS ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">Secret Management</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Secret Management</h2>
       <p className="text-gray-400 mb-2 text-sm">
         Encrypted locally. Never in build artifacts. Never hardcoded in Lambda
         env vars.
@@ -627,10 +641,10 @@ nextdeploy secrets delete OLD_KEY`}
         </ul>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── DNS CONFIGURATION ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">DNS Configuration</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">DNS Configuration</h2>
       <p className="text-gray-400 mb-6 text-sm">
         How to point your domain to your new infrastructure correctly.
       </p>
@@ -652,7 +666,7 @@ nextdeploy secrets delete OLD_KEY`}
 
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         <div>
-          <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+          <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 flex items-center gap-2">
             <Server className="w-5 h-5 text-blue-400" /> VPS Target
           </h3>
           <p className="text-gray-400 text-sm mb-4">
@@ -677,7 +691,7 @@ nextdeploy secrets delete OLD_KEY`}
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+          <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 flex items-center gap-2">
             <Cloud className="w-5 h-5 text-purple-400" /> Serverless Target
           </h3>
           <p className="text-gray-400 text-sm mb-4">
@@ -709,10 +723,10 @@ nextdeploy secrets delete OLD_KEY`}
         </div>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── SECURITY & ISOLATION ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
         Security & Isolation
       </h2>
       <p className="text-gray-400 mb-6 text-sm">
@@ -765,10 +779,10 @@ nextdeploy secrets delete OLD_KEY`}
         ))}
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── NEXTCORE METADATA ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
         Deep Dive: NextCore Metadata
       </h2>
       <p className="text-gray-400 mb-6 text-sm">
@@ -867,10 +881,10 @@ nextdeploy secrets delete OLD_KEY`}
         </div>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── CLI REFERENCE ─── */}
-      <h2 className="text-3xl font-bold text-white mb-6">CLI Reference</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">CLI Reference</h2>
       <div className="space-y-3 mb-8">
         {[
           {
@@ -878,16 +892,20 @@ nextdeploy secrets delete OLD_KEY`}
             desc: "Scaffold nextdeploy.yml in your project",
           },
           {
+            cmd: "nextdeploy ship",
+            desc: "Build (incrementally) and deploy in one step — the typical command. Targets VPS or serverless based on nextdeploy.yml.",
+          },
+          {
+            cmd: "nextdeploy ship --force",
+            desc: "Force a full rebuild before deploying (skips the incremental cache).",
+          },
+          {
             cmd: "nextdeploy build",
-            desc: "Analyse Next.js output, classify routes, detect integrations, produce metadata.json and app.tar.gz",
+            desc: "Run only the build stage — analyse Next.js output, classify routes, detect integrations, produce metadata.json and app.tar.gz. Useful for CI when you want build and deploy on separate runners.",
           },
           {
             cmd: "nextdeploy build --force",
-            desc: "Force a clean rebuild from scratch",
-          },
-          {
-            cmd: "nextdeploy ship",
-            desc: "Validate, upload, and deploy to configured target (VPS or serverless)",
+            desc: "Force a clean rebuild from scratch.",
           },
           {
             cmd: "nextdeploy prepare",
@@ -930,7 +948,7 @@ nextdeploy secrets delete OLD_KEY`}
             key={cmd}
             className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 p-4 bg-slate-900/30 border border-slate-800 rounded-xl"
           >
-            <code className="text-emerald-400 font-mono text-sm flex-shrink-0 whitespace-nowrap">
+            <code className="text-emerald-400 font-mono text-xs sm:text-sm flex-shrink-0 break-all sm:break-normal sm:whitespace-nowrap">
               {cmd}
             </code>
             <span className="text-gray-400 text-sm">{desc}</span>
@@ -938,10 +956,10 @@ nextdeploy secrets delete OLD_KEY`}
         ))}
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── CONFIG REFERENCE ─── */}
-      <h2 className="text-3xl font-bold text-white mb-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
         Configuration reference
       </h2>
       <Tabs defaultValue="vps" className="w-full mb-8">
@@ -994,14 +1012,14 @@ serverless:
         </TabsContent>
       </Tabs>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── ARCHITECTURE ─── */}
-      <h2 className="text-3xl font-bold text-white mb-6">Architecture</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Architecture</h2>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-4">VPS</h3>
-      <div className="my-6 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex flex-col items-center overflow-x-auto">
-        <svg viewBox="0 0 800 320" className="w-full min-w-[600px] max-w-3xl">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-4">VPS</h3>
+      <div className="my-6 p-3 sm:p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex flex-col items-center overflow-x-auto">
+        <svg viewBox="0 0 800 320" className="w-full max-w-3xl min-w-[480px] sm:min-w-[600px]">
           <defs>
             <marker
               id="arrowhead"
@@ -1214,9 +1232,9 @@ serverless:
         </svg>
       </div>
 
-      <h3 className="text-xl font-semibold text-white mt-8 mb-4">Serverless</h3>
-      <div className="my-6 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex flex-col items-center overflow-x-auto">
-        <svg viewBox="0 0 800 280" className="w-full min-w-[600px] max-w-3xl">
+      <h3 className="text-lg sm:text-xl font-semibold text-white mt-8 mb-4">Serverless</h3>
+      <div className="my-6 p-3 sm:p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex flex-col items-center overflow-x-auto">
+        <svg viewBox="0 0 800 280" className="w-full max-w-3xl min-w-[480px] sm:min-w-[600px]">
           <defs>
             <marker
               id="arrow-green"
@@ -1414,10 +1432,10 @@ serverless:
         </svg>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── UNDER THE HOOD ─── */}
-      <h2 className="text-3xl font-bold text-white mb-6">Under the hood</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Under the hood</h2>
       <div className="grid md:grid-cols-3 gap-6 my-8">
         <div className="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
           <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2 m-0 font-sans">
@@ -1464,10 +1482,10 @@ serverless:
         </div>
       </div>
 
-      <hr className="border-slate-800 my-10" />
+      <hr className="border-slate-800 my-8 sm:my-10" />
 
       {/* ─── ROADMAP ─── */}
-      <h2 className="text-3xl font-bold text-white mb-2">Roadmap</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Roadmap</h2>
       <p className="text-gray-400 text-sm mb-6">
         The build metadata layer already collects the data needed for most of
         these. Several are one function away from the information that enables
@@ -1550,6 +1568,8 @@ serverless:
           </div>
         ))}
       </div>
+
+      <DocPrevNext />
     </div>
   );
 }

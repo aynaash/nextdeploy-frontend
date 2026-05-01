@@ -12,7 +12,7 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 # ─── Configuration ─────────────────────────────────────────────────────────────
-REPO="Golangcodes/nextdeploy"
+REPO="aynaash/NextDeploy"
 BIN_NAME="nextdeploy"
 INSTALL_DIR="/usr/local/bin"
 DOWNLOAD_DIR="${HOME}/.nextdeploy/downloads"
@@ -319,7 +319,7 @@ main() {
     echo -e "${GREEN}===========================================${NC}"
     echo ""
     echo -e "  Run:  ${YELLOW}nextdeploy --help${NC}"
-    echo -e "  Docs: ${BLUE}https://nextdeploy.one/docs${NC}"
+    echo -e "  Docs: ${BLUE}https://nextdeploy.org/docs${NC}"
     echo ""
 
     if ! command -v "$BIN_NAME" >/dev/null 2>&1; then

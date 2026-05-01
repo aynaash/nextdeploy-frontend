@@ -3,7 +3,7 @@ echo ===========================================
 echo  Installing NextDeploy CLI for Windows...
 echo ===========================================
 
-set "REPO=Golangcodes/nextdeploy"
+set "REPO=aynaash/NextDeploy"
 set "BIN_NAME=nextdeploy.exe"
 set "INSTALL_DIR=%USERPROFILE%\.nextdeploy\bin"
 
@@ -11,7 +11,7 @@ set "INSTALL_DIR=%USERPROFILE%\.nextdeploy\bin"
 if not exist "%INSTALL_DIR%" mkdir "%INSTALL_DIR%"
 
 :: Use PowerShell to fetch the latest release tag
-for /f "delims=" %%I in ('powershell -Command "$response = Invoke-RestMethod -Uri 'https://api.github.com/repos/Golangcodes/nextdeploy/releases/latest'; $response.tag_name"') do set "LATEST_TAG=%%I"
+for /f "delims=" %%I in ('powershell -Command "$response = Invoke-RestMethod -Uri 'https://api.github.com/repos/aynaash/NextDeploy/releases/latest'; $response.tag_name"') do set "LATEST_TAG=%%I"
 
 if "%LATEST_TAG%"=="" (
     echo Could not fetch latest release. Please verify your internet connection or GitHub API limits.

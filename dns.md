@@ -1,6 +1,6 @@
 # 🌐 NextDeploy DNS Setup Guide
 
-Target Domain: **nextdeploy.one**
+Target Domain: **nextdeploy.org**
 Deployment Type: **VPS (Direct Server)**
 Generated: `2026-03-08 07:50:58 EAT`
 
@@ -9,7 +9,7 @@ Server IP: **production-01**
 > [!IMPORTANT]
 > This guide contains **exact** values for your domain. Copy them precisely.
 > DNS changes can take 5-60 minutes to propagate worldwide.
-> 📚 [Full Documentation](https://nextdeploy.one/docs)
+> 📚 [Full Documentation](https://nextdeploy.org/docs)
 
 ### ⏱️ DNS Propagation Timeline
 
@@ -34,13 +34,13 @@ Points your main domain directly to your server.
 
 ## 🔄 Step 2: WWW Subdomain
 
-Ensures `www.nextdeploy.one` works properly.
+Ensures `www.nextdeploy.org` works properly.
 
 | Field | Value |
 | :--- | :--- |
 | **Type** | `CNAME` |
 | **Host/Name** | `www` |
-| **Value/Target** | `nextdeploy.one` |
+| **Value/Target** | `nextdeploy.org` |
 | **TTL** | `Automatic` (or 5-30 minutes) |
 
 
@@ -50,7 +50,7 @@ Ensures `www.nextdeploy.one` works properly.
 
 | Do | Don't |
 | :--- | :--- |
-| ✅ Use `@` for root domain | ❌ Never include `.nextdeploy.one` in Host field |
+| ✅ Use `@` for root domain | ❌ Never include `.nextdeploy.org` in Host field |
 | ✅ For www SSL: `_hash.www` in Host | ❌ Don't add trailing dots |
 | ✅ Copy values exactly as shown | ❌ Don't add extra spaces |
 
@@ -73,8 +73,8 @@ Ensures `www.nextdeploy.one` works properly.
 
 | ❌ Wrong | ✅ Correct | Why |
 | :--- | :--- | :--- |
-| `_5f2eb7...nextdeploy.one` | `_5f2eb7...` | Host field should NOT include your domain name |
-| `_hash.www.nextdeploy.one` | `_hash.www` | For www SSL records, stop at '.www' |
+| `_5f2eb7...nextdeploy.org` | `_5f2eb7...` | Host field should NOT include your domain name |
+| `_hash.www.nextdeploy.org` | `_hash.www` | For www SSL records, stop at '.www' |
 | `value.acm-validations.aws.` | `value.acm-validations.aws` | Most providers don't want trailing dots in the Value field |
 | `Waiting 2 minutes and giving up` | `Waiting 30+ minutes for propagation` | DNS propagation takes time - be patient! |
 
@@ -84,14 +84,14 @@ After adding records, verify they're working:
 
 ```bash
 # Check root domain
-dig nextdeploy.one CNAME +short
+dig nextdeploy.org CNAME +short
 
 # Check SSL validation records
-dig _5f2eb7...nextdeploy.one CNAME +short
-dig @8.8.8.8 _hash.www.nextdeploy.one CNAME +short  # Use Google DNS
+dig _5f2eb7...nextdeploy.org CNAME +short
+dig @8.8.8.8 _hash.www.nextdeploy.org CNAME +short  # Use Google DNS
 
 # Watch for propagation
-watch -n 60 'dig @8.8.8.8 _hash.www.nextdeploy.one CNAME +short'
+watch -n 60 'dig @8.8.8.8 _hash.www.nextdeploy.org CNAME +short'
 ```
 
 **Expected output**: You should see the target value (CloudFront domain or validation string)
@@ -101,5 +101,5 @@ watch -n 60 'dig @8.8.8.8 _hash.www.nextdeploy.one CNAME +short'
 1. ✅ Save both records in your DNS panel
 2. ⏱️ Wait 5-10 minutes for propagation
 3. 🔒 SSL will be automatically provisioned by Caddy on first visit
-4. 🌐 Visit https://nextdeploy.one to test
+4. 🌐 Visit https://nextdeploy.org to test
 
